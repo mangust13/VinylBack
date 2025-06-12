@@ -6,11 +6,6 @@ using System.IdentityModel.Tokens.Jwt;
 
 namespace VinylBack.Services
 {
-    public interface ITokenService
-    {
-        string CreateToken(User user);
-    }
-
     public class TokenService: ITokenService
     {
         private readonly IConfiguration _config;

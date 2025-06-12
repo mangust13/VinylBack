@@ -18,12 +18,13 @@ namespace VinylBack
             // Controllers
             builder.Services.AddControllers();
 
-            // InMemory DB (עטלקאסמגמ)
+            // Supabase PostgreSQL DB
             builder.Services.AddDbContext<VinylContext>(options =>
-                options.UseInMemoryDatabase("VinylMockDb"));
+                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            // JWT Token Service
+            //Services
             builder.Services.AddScoped<ITokenService, TokenService>();
+            builder.Services.AddScoped<ISingerService, SingerService>();
 
             // Authentication with JWT
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

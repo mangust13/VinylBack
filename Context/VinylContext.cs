@@ -9,5 +9,8 @@ namespace VinylBack.Context
 
         //Authorization
         public DbSet<User> users { get; set; }
+        public DbSet<Singer> Singer { get; set; }
+        public DbSet<Album> Album { get; set; }
+
     }
 }
