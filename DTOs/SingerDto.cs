@@ -1,6 +1,6 @@
 ﻿namespace VinylBack.DTOs
 {
-    public class SingerDTO
+    public class SingerDto
     {
         public int SingerId { get; set; }
         public string? SingerFullName { get; set; }

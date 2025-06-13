@@ -3,44 +3,8 @@
   "WorkspaceRootPath": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\context\\vinylcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:context\\vinylcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\models\\singer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:models\\singer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\controllers\\singerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:controllers\\singerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\controllers\\authorizecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:controllers\\authorizecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\dtos\\singerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:dtos\\singerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\services\\implementations\\singerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:services\\implementations\\singerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\services\\interfaces\\isingerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:services\\interfaces\\isingerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,136 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-12T12:02:44.336Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "VinylContext.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Context\\VinylContext.cs",
-              "RelativeDocumentMoniker": "Context\\VinylContext.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Context\\VinylContext.cs",
-              "RelativeToolTip": "Context\\VinylContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T11:57:10.776Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T11:56:01.928Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AuthorizeController.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\AuthorizeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthorizeController.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\AuthorizeController.cs",
-              "RelativeToolTip": "Controllers\\AuthorizeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T11:52:04.449Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SingerService.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Implementations\\SingerService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\SingerService.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Implementations\\SingerService.cs",
-              "RelativeToolTip": "Services\\Implementations\\SingerService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAMwBAAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T11:45:52.603Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ISingerService.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Interfaces\\ISingerService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\ISingerService.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Interfaces\\ISingerService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\ISingerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T11:44:45.585Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "SingersController.cs",
               "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\SingersController.cs",
               "RelativeDocumentMoniker": "Controllers\\SingersController.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\SingersController.cs",
-              "RelativeToolTip": "Controllers\\SingersController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAYAAAAAAAAAA==",
+              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\SingersController.cs*",
+              "RelativeToolTip": "Controllers\\SingersController.cs*",
+              "ViewState": "AgIAACUAAAAAAAAAAAA5wDMAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T11:41:59.583Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SingerDto.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\DTOs\\SingerDto.cs",
-              "RelativeDocumentMoniker": "DTOs\\SingerDto.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\DTOs\\SingerDto.cs",
-              "RelativeToolTip": "DTOs\\SingerDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T11:39:36.854Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Singer.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Models\\Singer.cs",
-              "RelativeDocumentMoniker": "Models\\Singer.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Models\\Singer.cs",
-              "RelativeToolTip": "Models\\Singer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T11:36:26.899Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAADwv1IAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T11:30:56.401Z",
+              "WhenOpened": "2025-06-13T12:44:14.846Z",
               "EditorCaption": ""
             }
           ]

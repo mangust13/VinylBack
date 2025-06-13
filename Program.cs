@@ -25,6 +25,8 @@ namespace VinylBack
             //Services
             builder.Services.AddScoped<ITokenService, TokenService>();
             builder.Services.AddScoped<ISingerService, SingerService>();
+            builder.Services.AddScoped<IAlbumService, AlbumService>();
+
 
             // Authentication with JWT
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -85,7 +87,6 @@ namespace VinylBack
 
             app.UseAuthentication();
             app.UseAuthorization();
-
             app.MapControllers();
 
             app.Run();
