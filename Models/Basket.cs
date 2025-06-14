@@ -6,9 +6,9 @@ namespace VinylBack.Models
     {
         public int BasketId { get; set; }
 
-        [ForeignKey("Client")]
-        public int ClientId { get; set; }
-        public Client Client { get; set; }
+        [ForeignKey("AppUser")]
+        public int UserId { get; set; }
+        public AppUser User { get; set; }
         public double TotalCost { get; set; }
 
         public ICollection<TrackInBasket> TracksInBasket { get; set; }

@@ -8,9 +8,9 @@ namespace VinylBack.Models
         [Key]
         public int PurchaseId { get; set; }
 
-        [ForeignKey("Client")]
-        public int ClientId {get; set; }
-        public Client Client { get; set; }
+        [ForeignKey("AppUser")]
+        public int UserId { get; set; }
+        public AppUser User { get; set; }
         public DateTime PurchaseDate { get; set; }
         public double TotalAmount { get; set; }
 
@@ -21,7 +21,7 @@ namespace VinylBack.Models
         [ForeignKey("Location")]
         public int LocationId { get; set; }
         public Location Location { get; set; }
-        public ICollection<PurchasedTracks> PurchasedTracks { get; set; }
+        public ICollection<PurchasedTrack> PurchasedTracks { get; set; }
 
     }
 }

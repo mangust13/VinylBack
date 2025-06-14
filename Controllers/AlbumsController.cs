@@ -5,7 +5,6 @@ using VinylBack.Services;
 
 namespace VinylBack.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class AlbumsController : Controller
@@ -17,14 +16,12 @@ namespace VinylBack.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
         public async Task<ActionResult<AlbumDto>> GetAll()
         {
             return Ok(await _albumService.GetAllAlbumsAsync());
         }
 
         [HttpGet("{id}")]
-        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<AlbumDto>>> GetById(int id)
         {
             var album = await _albumService.GetAlbumByIdAsync(id);
@@ -32,7 +29,6 @@ namespace VinylBack.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         public async Task<ActionResult<AlbumDto>> Create([FromBody] AlbumDto album)
         {
             var newAlbum = await _albumService.CreateAlbumAsync(album);
@@ -40,14 +36,12 @@ namespace VinylBack.Controllers
         }
 
         [HttpPut("{id}")]
-        [AllowAnonymous]
         public async Task<IActionResult> Update(int id, [FromBody] AlbumDto album)
         {
             var updated = await _albumService.UpdateAlbumAsync(id, album);
             return updated ? NoContent() : NotFound();
         }
 
-        [AllowAnonymous]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete (int id)
         {

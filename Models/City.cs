@@ -8,7 +8,7 @@ namespace VinylBack.Models
         public string CityName { get; set; }
         [ForeignKey("County")]
         public int CountyId { get; set; }
-        public County County { get; set; }
+        public Country County { get; set; }
         public ICollection<Location> Locations { get; set; }
 
     }

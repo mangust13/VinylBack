@@ -14,7 +14,7 @@ namespace VinylBack.Models
         public int? AlbumId { get; set; }
         public Album? Album { get; set; }
         public string? TrackURL { get; set; }
-        public ICollection<PurchasedTracks> PurchasedTracks { get; set; }
+        public ICollection<PurchasedTrack> PurchasedTracks { get; set; }
         public ICollection<TrackInBasket> TracksInBasket { get; set; }
 
     }

@@ -6,7 +6,7 @@ using System.Text;
 using VinylBack.Context;
 using VinylBack.DTOs;
 using VinylBack.Models;
-using VinylBack.Services;
+using Npgsql;
 
 
 namespace VinylBack.Controllers
@@ -16,54 +16,64 @@ namespace VinylBack.Controllers
     public class AuthController : ControllerBase
     {
         private readonly VinylContext _context;
-        private readonly ITokenService _tokenService;
 
-        public AuthController(VinylContext context, ITokenService tokenService)
+        public AuthController(VinylContext context)
         {
             _context = context;
-            _tokenService = tokenService;
         }
 
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterDto dto)
         {
-            if (await _context.users.AnyAsync(u => u.UserName == dto.UserName))
-                return BadRequest("Username already exists");
+            if (await _context.AppUser.AnyAsync(u => u.Email == dto.Email))
+                return BadRequest("Користувач з такою поштою вже існує.");
 
             using var hmac = new HMACSHA512();
 
-            var user = new User
+            var hash = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(dto.Password)));
+            var salt = Convert.ToBase64String(hmac.Key);
+
+            var sql = @"
+                INSERT INTO ""AppUser"" (""Email"", ""PasswordHash"", ""PasswordSalt"", ""RoleId"", ""UserFullName"")
+                VALUES (@p0, @p1, @p2, @p3, @p4);
+            ";
+
+            try
             {
-                UserName = dto.UserName,
-                Email = dto.Email,
-                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(dto.Password)),
-                PasswordSalt = hmac.Key
-            };
+                await _context.Database.ExecuteSqlRawAsync(sql, dto.Email, hash, salt, 1, dto.UserFullName ?? "");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("DB error: " + ex.Message);
+            }
 
-            _context.users.Add(user);
-            await _context.SaveChangesAsync();
-
-            var token = _tokenService.CreateToken(user);
-
-            return Ok(new { token });
+            return Ok("Користувача успішно зареєстровано.");
         }
 
-        [HttpPost("login")]
-        public async Task<ActionResult<string>> Login(LoginDto dto)
-        {
-            var user = await _context.users.SingleOrDefaultAsync(u => u.UserName == dto.UserName);
-            if (user == null)
-                return Unauthorized("Invalid username");
+        //[HttpPost("login")]
+        //public async Task<ActionResult<string>> Login(LoginDto dto)
+        //{
+        //    var user = await _context.AppUser
+        //        .Include(u => u.Role)
+        //        .SingleOrDefaultAsync(u => u.Email == dto.Email);
 
-            using var hmac = new HMACSHA512(user.PasswordSalt);
-            var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(dto.Password));
-            if (!computedHash.SequenceEqual(user.PasswordHash))
-                return Unauthorized("Invalid password");
+        //    if (user == null)
+        //        return Unauthorized("Invalid username");
 
-            var token = _tokenService.CreateToken(user);
+        //    using var hmac = new HMACSHA512(user.PasswordSalt);
+        //    var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(dto.Password));
 
-            return Ok(new { token });
-        }
+        //    if (!computedHash.SequenceEqual(user.PasswordHash))
+        //        return Unauthorized("Invalid password");
+
+        //    var createdUser = await _context.AppUser
+        //        .Include(u => u.Role)
+        //        .FirstAsync(u => u.UserId == user.UserId);
+
+
+
+        //    return Ok();
+        //}
 
     }
 }

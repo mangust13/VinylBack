@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VinylBack.Models
 {
-    public class PurchasedTracks
+    public class PurchasedTrack
     {
         [Key]
         public int PurchasedTrackId { get; set; }

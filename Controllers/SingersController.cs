@@ -6,7 +6,6 @@ using VinylBack.Services;
 
 namespace VinylBack.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class SingersController : ControllerBase
@@ -17,7 +16,6 @@ namespace VinylBack.Controllers
             _singerService = singerService;
         }
 
-        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<SingerDto>>> GetAll()
         {
@@ -25,7 +23,6 @@ namespace VinylBack.Controllers
             return Ok(singers);
         }
 
-        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<ActionResult<SingerDto>> GetById(int id)
         {
@@ -33,7 +30,6 @@ namespace VinylBack.Controllers
             return singer == null ? NotFound() : Ok(singer);
         }
 
-        [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult<SingerDto>> Create([FromBody] SingerDto singer)
         {
@@ -41,7 +37,6 @@ namespace VinylBack.Controllers
             return CreatedAtAction(nameof(GetById), new { id = newSinger.SingerId }, newSinger);
         }
 
-        [AllowAnonymous]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] SingerDto singer)
         {
@@ -49,7 +44,6 @@ namespace VinylBack.Controllers
             return updated ? NoContent() : NotFound();
         }
 
-        [AllowAnonymous]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
