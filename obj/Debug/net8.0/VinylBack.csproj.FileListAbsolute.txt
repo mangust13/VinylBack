@@ -13,7 +13,6 @@ D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\VinylBack.deps.json
 D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\VinylBack.runtimeconfig.json
 D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\VinylBack.dll
 D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\VinylBack.pdb
-D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
@@ -27,8 +26,6 @@ D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\Microsoft.Extensions.Primit
 D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
 D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
 D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\Microsoft.OpenApi.dll
 D:\Univer\Sem_06\Practice\VinylBack\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll

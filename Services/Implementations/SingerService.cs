@@ -65,9 +65,15 @@ namespace VinylBack.Services
             return true;
         }
 
-        public Task<bool> DeleteSingerAsync(int id)
+        public async Task<bool> DeleteSingerAsync(int id)
         {
-            throw new NotImplementedException();
+            var singer = await _context.Singer.FindAsync(id);
+            if (singer == null)
+                return false;
+
+            _context.Singer.Remove(singer);
+            await _context.SaveChangesAsync();
+            return true;
         }        
     }
 }

@@ -71,13 +71,13 @@ namespace VinylBack.Services
             if (updatedAlbum == null)
                 return false;
 
-            album.ReleaseYear = album.ReleaseYear;
-            album.ReleaseCountry = album.ReleaseCountry;
-            album.Lable = album.Lable;
-            album.Genre = album.Genre;
-            album.Style = album.Style;
-            album.SingerId = album.SingerId;
-            album.AlbumURL = album.AlbumURL;
+            updatedAlbum.ReleaseYear = album.ReleaseYear;
+            updatedAlbum.ReleaseCountry = album.ReleaseCountry;
+            updatedAlbum.Lable = album.Lable;
+            updatedAlbum.Genre = album.Genre;
+            updatedAlbum.Style = album.Style;
+            updatedAlbum.SingerId = album.SingerId;
+            updatedAlbum.AlbumURL = album.AlbumURL;
 
             await _context.SaveChangesAsync();
             return true;

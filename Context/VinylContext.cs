@@ -21,8 +21,5 @@ namespace VinylBack.Context
         public DbSet<City> City { get; set; }
         public DbSet<Country> Country { get; set; }
         public DbSet<PurchaseStatus> PurchaseStatus { get; set; }
-
-
-
     }
 }
