@@ -47,7 +47,7 @@ namespace VinylBack.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var success = await _service.Delete(id);
+            var success = await _service.DeleteLable(id);
             return success ? NoContent() : NotFound();
         }
     }

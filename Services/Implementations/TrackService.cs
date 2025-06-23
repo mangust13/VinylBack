@@ -13,9 +13,52 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<TrackDto>> GetAllTracks(int page, int limit)
+        public async Task<IEnumerable<TrackDto>> GetAllTracks(
+            int page, 
+            int limit,
+            List<int>? genreIds = null,
+            List<int>? styleIds = null,
+            double? minPrice = null,
+            double? maxPrice = null,
+            string? sortByDuration = null)
         {
-            return await _context.Track
+            var query = _context.Track
+                .Include(t => t.Album)
+                .AsQueryable();
+
+            if (genreIds != null && genreIds.Any())
+            {
+                query = query.Where(t =>
+                    t.Album != null &&
+                    t.Album.GenreId.HasValue &&
+                    genreIds.Contains(t.Album.GenreId.Value));
+            }
+
+            if (styleIds != null && styleIds.Any())
+            {
+                query = query.Where(t =>
+                    t.Album != null &&
+                    t.Album.StyleId.HasValue &&
+                    styleIds.Contains(t.Album.StyleId.Value));
+            }
+
+            if (minPrice.HasValue)
+                query = query.Where(t => t.Price >= minPrice.Value);
+
+            if (maxPrice.HasValue)
+                query = query.Where(t => t.Price <= maxPrice.Value);
+
+            if (!string.IsNullOrEmpty(sortByDuration))
+            {
+                query = sortByDuration.ToLower() switch
+                {
+                    "asc" => query.OrderBy(t => t.TrackDuration),
+                    "desc" => query.OrderByDescending(t => t.TrackDuration),
+                    _ => query
+                };
+            }
+
+            var result = await query
                 .Skip((page - 1) * limit)
                 .Take(limit)
                 .Select(t => new TrackDto
@@ -26,7 +69,33 @@ namespace VinylBack.Services
                     Price = t.Price,
                     AlbumId = t.AlbumId,
                     TrackURL = t.TrackURL
-                }).ToListAsync();
+                })
+                .ToListAsync();
+
+            return result;
+        }
+
+        public async Task<IEnumerable<TrackDto>> GetTracksByGenresAndStyles(List<int>? genreIds, List<int>? styleIds)
+        {
+            var query = _context.Track
+                .Include(t => t.Album)
+                .AsQueryable();
+
+            if (genreIds != null && genreIds.Any())
+                query = query.Where(t => t.Album != null && t.Album.GenreId.HasValue && genreIds.Contains(t.Album.GenreId.Value));
+
+            if (styleIds != null && styleIds.Any())
+                query = query.Where(t => t.Album != null && t.Album.StyleId.HasValue && styleIds.Contains(t.Album.StyleId.Value));
+
+            return await query.Select(t => new TrackDto
+            {
+                TrackId = t.TrackId,
+                TrackName = t.TrackName,
+                TrackDuration = t.TrackDuration,
+                Price = t.Price,
+                TrackURL = t.TrackURL,
+                AlbumId = t.AlbumId
+            }).ToListAsync();
         }
 
         public async Task<TrackDto?> GetTrackById(int id)

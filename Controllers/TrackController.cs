@@ -17,14 +17,20 @@ namespace VinylBack.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
-        public async Task<ActionResult<IEnumerable<TrackDto>>> GetAll([FromQuery] int page = 1, [FromQuery] int limit = 10)
+        public async Task<ActionResult<IEnumerable<TrackDto>>> GetAll(
+            [FromQuery] int page = 1, 
+            [FromQuery] int limit = 10,
+            [FromQuery] List<int>? genreIds = null,
+            [FromQuery] List<int>? styleIds = null,
+            [FromQuery] double? minPrice = null,
+            [FromQuery] double? maxPrice = null,
+            [FromQuery] string? sortByDuration = null)
         {
-            return Ok(await _trackService.GetAllTracks(page, limit));
+            var tracks = await _trackService.GetAllTracks(page, limit, genreIds, styleIds, minPrice, maxPrice, sortByDuration);
+            return Ok(tracks);
         }
 
         [HttpGet("{id}")]
-        [AllowAnonymous]
         public async Task<ActionResult<TrackDto>> GetById(int id)
         {
             var track = await _trackService.GetTrackById(id);

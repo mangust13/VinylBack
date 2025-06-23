@@ -62,7 +62,7 @@ namespace VinylBack.Services
             return lableDto;
         }
 
-        public async Task<bool> Delete(int id)
+        public async Task<bool> DeleteLable(int id)
         {
             var lable = await _context.Lable.FindAsync(id);
             if (lable == null) return false;

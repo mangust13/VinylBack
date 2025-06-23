@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VinylBack")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2cd239c177557bcfe4fa15198092a1b6b3ffd16f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b9caccf4f514c32211da042252848e810ce5c3c")]
 [assembly: System.Reflection.AssemblyProductAttribute("VinylBack")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VinylBack")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

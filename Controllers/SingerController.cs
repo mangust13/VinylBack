@@ -17,9 +17,16 @@ namespace VinylBack.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SingerDto>>> GetAll([FromQuery] int page = 1, [FromQuery] int limit = 10)
+        public async Task<ActionResult<IEnumerable<SingerDto>>> GetAll(
+            [FromQuery] int page = 1, 
+            [FromQuery] int limit = 10,
+            [FromQuery] List<int>? genreIds = null,
+            [FromQuery] List<int>? styleIds = null,
+            [FromQuery] string? sortByName = null)
         {
-            return Ok(await _singerService.GetAllSingers(page, limit));
+            var singers = await _singerService.GetAllSingers(
+                page, limit, genreIds, styleIds, sortByName);
+            return Ok(singers);
         }
 
         [HttpGet("{id}")]

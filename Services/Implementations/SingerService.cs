@@ -13,11 +13,71 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<SingerDto>> GetAllSingers(int page, int limit)
+        public async Task<IEnumerable<SingerDto>> GetAllSingers(
+            int page,
+            int limit,
+            List<int>? genreIds = null,
+            List<int>? styleIds = null,
+            string? sortByName = null)
         {
-            return await _context.Singer
+            var query = _context.Singer
+                .Include(s => s.Albums)
+                .AsQueryable();
+
+            if (genreIds != null && genreIds.Any())
+            {
+                query = query.Where(s => s.Albums
+                    .Any(a => a.GenreId.HasValue && genreIds.Contains(a.GenreId.Value)));
+            }
+
+            if (styleIds != null && styleIds.Any())
+            {
+                query = query.Where(s => s.Albums
+                    .Any(a => a.StyleId.HasValue && styleIds.Contains(a.StyleId.Value)));
+            }
+
+            if (!string.IsNullOrEmpty(sortByName))
+            {
+                query = sortByName.ToLower() switch
+                {
+                    "asc" => query.OrderBy(s => s.SingerFullName),
+                    "desc" => query.OrderByDescending(s => s.SingerFullName),
+                    _ => query
+                };
+            }
+
+            var result = await query
                 .Skip((page - 1) * limit)
                 .Take(limit)
+                .Select(s => new SingerDto
+                {
+                    SingerId = s.SingerId,
+                    SingerFullName = s.SingerFullName,
+                    SingerURL = s.SingerURL
+                })
+                .ToListAsync();
+
+            return result;
+        }
+
+        public async Task<IEnumerable<SingerDto>> GetSingersByGenresAndStyles(List<int>? genreIds, List<int>? styleIds)
+        {
+            var albumQuery = _context.Album.AsQueryable();
+
+            if (genreIds != null && genreIds.Any())
+                albumQuery = albumQuery.Where(a => a.GenreId.HasValue && genreIds.Contains(a.GenreId.Value));
+
+            if (styleIds != null && styleIds.Any())
+                albumQuery = albumQuery.Where(a => a.StyleId.HasValue && styleIds.Contains(a.StyleId.Value));
+
+            var singerIds = await albumQuery
+                .Where(a => a.SingerId.HasValue)
+                .Select(a => a.SingerId.Value)
+                .Distinct()
+                .ToListAsync();
+
+            return await _context.Singer
+                .Where(s => singerIds.Contains(s.SingerId))
                 .Select(s => new SingerDto
                 {
                     SingerId = s.SingerId,
