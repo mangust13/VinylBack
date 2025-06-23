@@ -4,10 +4,10 @@ namespace VinylBack.Services
 {
     public interface ISingerService
     {
-        Task<IEnumerable<SingerDto>> GetAllSingersAsync();
-        Task<SingerDto?> GetSingerByIdAsync(int id);
-        Task<SingerDto?> CreateSingerAsync(SingerDto singer);
-        Task<bool> UpdateSingerAsync(int id, SingerDto singer);
-        Task<bool> DeleteSingerAsync(int id);
+        Task<IEnumerable<SingerDto>> GetAllSingers(int page, int limit);
+        Task<SingerDto?> GetSingerById(int id);
+        Task<SingerDto?> CreateSinger(SingerDto singer);
+        Task<bool> UpdateSinger(int id, SingerDto singer);
+        Task<bool> DeleteSinger(int id);
     }
 }

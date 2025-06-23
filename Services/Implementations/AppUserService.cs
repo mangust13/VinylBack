@@ -14,9 +14,11 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<AppUserDTO>> GetAllAsync()
+        public async Task<IEnumerable<AppUserDTO>> GetAllUsers(int page, int limit)
         {
             return await _context.AppUser
+                .Skip((page - 1) * limit)
+                .Take(limit)
                 .Select(u => new AppUserDTO
                 {
                     UserId = u.UserId,
@@ -30,7 +32,7 @@ namespace VinylBack.Services
                 .ToListAsync();
         }
 
-        public async Task<AppUserDTO?> GetByIdAsync(int id)
+        public async Task<AppUserDTO?> GetUserById(int id)
         {
             var u = await _context.AppUser.FindAsync(id);
             return u == null ? null : new AppUserDTO
@@ -45,7 +47,7 @@ namespace VinylBack.Services
             };
         }
 
-        public async Task<AppUserDTO> CreateAsync(AppUserDTO dto)
+        public async Task<AppUserDTO> CreateUser(AppUserDTO dto)
         {
             var entity = new AppUser
             {
@@ -64,7 +66,7 @@ namespace VinylBack.Services
             return dto;
         }
 
-        public async Task<bool> UpdateAsync(int id, AppUserDTO dto)
+        public async Task<bool> UpdateUser(int id, AppUserDTO dto)
         {
             var entity = await _context.AppUser.FindAsync(id);
             if (entity == null) return false;
@@ -80,7 +82,7 @@ namespace VinylBack.Services
             return true;
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteUser(int id)
         {
             var entity = await _context.AppUser.FindAsync(id);
             if (entity == null) return false;

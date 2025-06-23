@@ -8,46 +8,45 @@ namespace VinylBack.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class SingersController : ControllerBase
+    public class SingerController : ControllerBase
     {
         private readonly ISingerService _singerService;
-        public SingersController(ISingerService singerService)
+        public SingerController(ISingerService singerService)
         {
             _singerService = singerService;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SingerDto>>> GetAll()
+        public async Task<ActionResult<IEnumerable<SingerDto>>> GetAll([FromQuery] int page = 1, [FromQuery] int limit = 10)
         {
-            var singers = await _singerService.GetAllSingersAsync();
-            return Ok(singers);
+            return Ok(await _singerService.GetAllSingers(page, limit));
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<SingerDto>> GetById(int id)
         {
-            var singer = await _singerService.GetSingerByIdAsync(id);
+            var singer = await _singerService.GetSingerById(id);
             return singer == null ? NotFound() : Ok(singer);
         }
 
         [HttpPost]
         public async Task<ActionResult<SingerDto>> Create([FromBody] SingerDto singer)
         {
-            var newSinger = await _singerService.CreateSingerAsync(singer);
+            var newSinger = await _singerService.CreateSinger(singer);
             return CreatedAtAction(nameof(GetById), new { id = newSinger.SingerId }, newSinger);
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] SingerDto singer)
         {
-            var updated = await _singerService.UpdateSingerAsync(id, singer);
+            var updated = await _singerService.UpdateSinger(id, singer);
             return updated ? NoContent() : NotFound();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var deleted = await _singerService.DeleteSingerAsync(id);
+            var deleted = await _singerService.DeleteSinger(id);
             return deleted ? NoContent() : NotFound();
         }
     }

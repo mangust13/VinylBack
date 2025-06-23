@@ -14,9 +14,11 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<CountryDTO>> GetAllAsync()
+        public async Task<IEnumerable<CountryDTO>> GetAllCountries(int page, int limit)
         {
             return await _context.Country
+                .Skip((page - 1) * limit)
+                .Take(limit)
                 .Select(c => new CountryDTO
                 {
                     CountryId = c.CountryId,
@@ -25,7 +27,7 @@ namespace VinylBack.Services
                 .ToListAsync();
         }
 
-        public async Task<CountryDTO?> GetByIdAsync(int id)
+        public async Task<CountryDTO?> GetCountryById(int id)
         {
             var c = await _context.Country.FindAsync(id);
             return c == null ? null : new CountryDTO
@@ -35,7 +37,7 @@ namespace VinylBack.Services
             };
         }
 
-        public async Task<CountryDTO> CreateAsync(CountryDTO dto)
+        public async Task<CountryDTO> CreateCountry(CountryDTO dto)
         {
             var entity = new Country
             {
@@ -49,7 +51,7 @@ namespace VinylBack.Services
             return dto;
         }
 
-        public async Task<bool> UpdateAsync(int id, CountryDTO dto)
+        public async Task<bool> UpdateCountry(int id, CountryDTO dto)
         {
             var entity = await _context.Country.FindAsync(id);
             if (entity == null) return false;
@@ -60,7 +62,7 @@ namespace VinylBack.Services
             return true;
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteCountry(int id)
         {
             var entity = await _context.Country.FindAsync(id);
             if (entity == null) return false;

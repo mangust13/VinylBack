@@ -4,10 +4,10 @@ namespace VinylBack.Services
 {
     public interface ICountryService
     {
-        Task<IEnumerable<CountryDTO>> GetAllAsync();
-        Task<CountryDTO?> GetByIdAsync(int id);
-        Task<CountryDTO> CreateAsync(CountryDTO dto);
-        Task<bool> UpdateAsync(int id, CountryDTO dto);
-        Task<bool> DeleteAsync(int id);
+        Task<IEnumerable<CountryDTO>> GetAllCountries(int page, int limit);
+        Task<CountryDTO?> GetCountryById(int id);
+        Task<CountryDTO> CreateCountry(CountryDTO dto);
+        Task<bool> UpdateCountry(int id, CountryDTO dto);
+        Task<bool> DeleteCountry(int id);
     }
 }

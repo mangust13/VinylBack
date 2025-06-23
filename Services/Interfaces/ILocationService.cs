@@ -4,10 +4,10 @@ namespace VinylBack.Services
 {
     public interface ILocationService
     {
-        Task<IEnumerable<LocationDTO>> GetAllAsync();
-        Task<LocationDTO?> GetByIdAsync(int id);
-        Task<LocationDTO> CreateAsync(LocationDTO dto);
-        Task<bool> UpdateAsync(int id, LocationDTO dto);
-        Task<bool> DeleteAsync(int id);
+        Task<IEnumerable<LocationDTO>> GetAllLocations();
+        Task<LocationDTO?> GetLocationById(int id);
+        Task<LocationDTO> CreateLocation(LocationDTO dto);
+        Task<bool> UpdateLocation(int id, LocationDTO dto);
+        Task<bool> DeleteLocation(int id);
     }
 }

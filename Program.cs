@@ -24,6 +24,10 @@ namespace VinylBack
 
             // Services
             builder.Services.AddScoped<ISingerService, SingerService>();
+            builder.Services.AddScoped<IGenreService, GenreService>();
+            builder.Services.AddScoped<ILableService, LableService>();
+            builder.Services.AddScoped<IStyleService, StyleService>();
+
             builder.Services.AddScoped<IAlbumService, AlbumService>();
             builder.Services.AddScoped<ITrackService, TrackService>();
             builder.Services.AddScoped<IPurchasedTrackService, PurchasedTrackService>();

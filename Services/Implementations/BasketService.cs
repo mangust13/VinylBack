@@ -14,9 +14,11 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<BasketDTO>> GetAllAsync()
+        public async Task<IEnumerable<BasketDTO>> GetAllBaskets(int page, int limit)
         {
             return await _context.Basket
+                .Skip((page - 1) * limit)
+                .Take(limit)
                 .Select(b => new BasketDTO
                 {
                     BasketId = b.BasketId,
@@ -26,7 +28,7 @@ namespace VinylBack.Services
                 .ToListAsync();
         }
 
-        public async Task<BasketDTO?> GetByIdAsync(int id)
+        public async Task<BasketDTO?> GetBasketById(int id)
         {
             var b = await _context.Basket.FindAsync(id);
             return b == null ? null : new BasketDTO
@@ -37,7 +39,7 @@ namespace VinylBack.Services
             };
         }
 
-        public async Task<BasketDTO> CreateAsync(BasketDTO dto)
+        public async Task<BasketDTO> CreateBasket(BasketDTO dto)
         {
             var entity = new Basket
             {
@@ -52,7 +54,7 @@ namespace VinylBack.Services
             return dto;
         }
 
-        public async Task<bool> UpdateAsync(int id, BasketDTO dto)
+        public async Task<bool> UpdateBasket(int id, BasketDTO dto)
         {
             var entity = await _context.Basket.FindAsync(id);
             if (entity == null) return false;
@@ -64,7 +66,7 @@ namespace VinylBack.Services
             return true;
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteBasket(int id)
         {
             var entity = await _context.Basket.FindAsync(id);
             if (entity == null) return false;

@@ -4,10 +4,10 @@ namespace VinylBack.Services
 {
     public interface ITrackInBasketService
     {
-        Task<IEnumerable<TrackInBasketDTO>> GetAllAsync();
-        Task<TrackInBasketDTO?> GetByIdAsync(int id);
-        Task<TrackInBasketDTO> CreateAsync(TrackInBasketDTO dto);
-        Task<bool> UpdateAsync(int id, TrackInBasketDTO dto);
-        Task<bool> DeleteAsync(int id);
+        Task<IEnumerable<TrackInBasketDTO>> GetAllTrackInBasketServices();
+        Task<TrackInBasketDTO?> GetTrackInBasketServiceById(int id);
+        Task<TrackInBasketDTO> CreateTrackInBasketService(TrackInBasketDTO dto);
+        Task<bool> UpdateTrackInBasketService(int id, TrackInBasketDTO dto);
+        Task<bool> DeleteTrackInBasketService(int id);
     }
 }

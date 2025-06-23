@@ -14,7 +14,7 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<TrackInBasketDTO>> GetAllAsync()
+        public async Task<IEnumerable<TrackInBasketDTO>> GetAllTrackInBasketServices()
         {
             return await _context.TrackInBasket
                 .Select(t => new TrackInBasketDTO
@@ -26,7 +26,7 @@ namespace VinylBack.Services
                 .ToListAsync();
         }
 
-        public async Task<TrackInBasketDTO?> GetByIdAsync(int id)
+        public async Task<TrackInBasketDTO?> GetTrackInBasketServiceById(int id)
         {
             var t = await _context.TrackInBasket.FindAsync(id);
             return t == null ? null : new TrackInBasketDTO
@@ -37,7 +37,7 @@ namespace VinylBack.Services
             };
         }
 
-        public async Task<TrackInBasketDTO> CreateAsync(TrackInBasketDTO dto)
+        public async Task<TrackInBasketDTO> CreateTrackInBasketService(TrackInBasketDTO dto)
         {
             var entity = new TrackInBasket
             {
@@ -52,7 +52,7 @@ namespace VinylBack.Services
             return dto;
         }
 
-        public async Task<bool> UpdateAsync(int id, TrackInBasketDTO dto)
+        public async Task<bool> UpdateTrackInBasketService(int id, TrackInBasketDTO dto)
         {
             var entity = await _context.TrackInBasket.FindAsync(id);
             if (entity == null) return false;
@@ -64,7 +64,7 @@ namespace VinylBack.Services
             return true;
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteTrackInBasketService(int id)
         {
             var entity = await _context.TrackInBasket.FindAsync(id);
             if (entity == null) return false;

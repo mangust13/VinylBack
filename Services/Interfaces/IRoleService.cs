@@ -4,10 +4,10 @@ namespace VinylBack.Services
 {
     public interface IRoleService
     {
-        Task<IEnumerable<RoleDTO>> GetAllAsync();
-        Task<RoleDTO?> GetByIdAsync(int id);
-        Task<RoleDTO> CreateAsync(RoleDTO dto);
-        Task<bool> UpdateAsync(int id, RoleDTO dto);
-        Task<bool> DeleteAsync(int id);
+        Task<IEnumerable<RoleDTO>> GetAllRoles();
+        Task<RoleDTO?> GetRoleById(int id);
+        Task<RoleDTO> CreateRole(RoleDTO dto);
+        Task<bool> UpdateRole(int id, RoleDTO dto);
+        Task<bool> DeleteRole(int id);
     }
 }

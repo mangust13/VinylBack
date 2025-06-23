@@ -4,10 +4,10 @@ namespace VinylBack.Services
 {
     public interface IPurchasedTrackService
     {
-        Task<IEnumerable<PurchasedTrackDTO>> GetAllAsync();
-        Task<PurchasedTrackDTO?> GetByIdAsync(int id);
-        Task<PurchasedTrackDTO> CreateAsync(PurchasedTrackDTO dto);
-        Task<bool> UpdateAsync(int id, PurchasedTrackDTO dto);
-        Task<bool> DeleteAsync(int id);
+        Task<IEnumerable<PurchasedTrackDTO>> GetAllPurchasedTracks(int page, int limit);
+        Task<PurchasedTrackDTO?> GetPurchasedTrackById(int id);
+        Task<PurchasedTrackDTO> CreatePurchasedTrack(PurchasedTrackDTO dto);
+        Task<bool> UpdatePurchasedTrack(int id, PurchasedTrackDTO dto);
+        Task<bool> DeletePurchasedTrack(int id);
     }
 }

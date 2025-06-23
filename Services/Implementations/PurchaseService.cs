@@ -14,9 +14,11 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<PurchaseDTO>> GetAllAsync()
+        public async Task<IEnumerable<PurchaseDTO>> GetAllPurchaseServices(int page, int limit)
         {
             return await _context.Purchase
+                .Skip((page - 1) * limit)
+                .Take(limit)
                 .Select(p => new PurchaseDTO
                 {
                     PurchaseId = p.PurchaseId,
@@ -29,7 +31,7 @@ namespace VinylBack.Services
                 .ToListAsync();
         }
 
-        public async Task<PurchaseDTO?> GetByIdAsync(int id)
+        public async Task<PurchaseDTO?> GetPurchaseServiceById(int id)
         {
             var p = await _context.Purchase.FindAsync(id);
             return p == null ? null : new PurchaseDTO
@@ -43,7 +45,7 @@ namespace VinylBack.Services
             };
         }
 
-        public async Task<PurchaseDTO> CreateAsync(PurchaseDTO dto)
+        public async Task<PurchaseDTO> CreatePurchaseService(PurchaseDTO dto)
         {
             var entity = new Purchase
             {
@@ -61,7 +63,7 @@ namespace VinylBack.Services
             return dto;
         }
 
-        public async Task<bool> UpdateAsync(int id, PurchaseDTO dto)
+        public async Task<bool> UpdatePurchaseService(int id, PurchaseDTO dto)
         {
             var entity = await _context.Purchase.FindAsync(id);
             if (entity == null) return false;
@@ -76,7 +78,7 @@ namespace VinylBack.Services
             return true;
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeletePurchaseService(int id)
         {
             var entity = await _context.Purchase.FindAsync(id);
             if (entity == null) return false;

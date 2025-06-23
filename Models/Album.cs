@@ -7,16 +7,29 @@ namespace VinylBack.Models
     {
         [Key]
         public int AlbumId {  get; set; }
+        public string? AlbumName { get; set; }
         public int? ReleaseYear { get; set; }
-        public string? ReleaseCountry { get; set; }
-        public string? Lable { get; set; }
-        public string? Genre { get; set; }
-        public string? Style { get; set; }
+        public string? AlbumURL { get; set; }
 
         [ForeignKey("Singer")]
         public int? SingerId { get; set; }
         public Singer? Singer { get; set; }
-        public string? AlbumURL { get; set; }
+
+        [ForeignKey("ReleaseCountry")]
+        public int? ReleaseCountryId { get; set; }
+        public Country? ReleaseCountry { get; set; }
+
+        [ForeignKey("Lable")]
+        public int? LableId { get; set; }
+        public Lable? Lable { get; set; }
+
+        [ForeignKey("Style")]
+        public int? StyleId { get; set; }
+        public Style? Style { get; set; }
+
+        [ForeignKey("Genre")]
+        public int? GenreId { get; set; }
+        public Genre? Genre { get; set; }
         public ICollection<Track> Tracks { get; set; }
     }
 }

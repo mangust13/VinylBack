@@ -5,22 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:controllers\\locationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\services\\implementations\\locationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:services\\implementations\\locationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\services\\interfaces\\ilocationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:services\\interfaces\\ilocationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:models\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,60 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LocationController.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\LocationController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LocationController.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\LocationController.cs",
-              "RelativeToolTip": "Controllers\\LocationController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAswDcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T12:00:00.995Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LocationService.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Implementations\\LocationService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\LocationService.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Implementations\\LocationService.cs",
-              "RelativeToolTip": "Services\\Implementations\\LocationService.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAswE0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T11:59:35.122Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ILocationService.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Interfaces\\ILocationService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\ILocationService.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Interfaces\\ILocationService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\ILocationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T11:59:11.48Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Location.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Models\\Location.cs",
-              "RelativeDocumentMoniker": "Models\\Location.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Models\\Location.cs",
-              "RelativeToolTip": "Models\\Location.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T11:58:12.169Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -92,9 +24,9 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwCYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBwAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T11:11:59.678Z",
+              "WhenOpened": "2025-06-23T11:24:56.047Z",
               "EditorCaption": ""
             }
           ]

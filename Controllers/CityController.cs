@@ -18,37 +18,37 @@ namespace VinylBack.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<ActionResult<IEnumerable<CityDTO>>> GetAll()
+        public async Task<ActionResult<IEnumerable<CityDTO>>> GetAll([FromQuery] int page = 1, [FromQuery] int limit = 10)
         {
-            return Ok(await _service.GetAllAsync());
+            return Ok(await _service.GetAllCities(page, limit));
         }
 
         [HttpGet("{id}")]
         [AllowAnonymous]
         public async Task<ActionResult<CityDTO>> GetById(int id)
         {
-            var city = await _service.GetByIdAsync(id);
+            var city = await _service.GetCityById(id);
             return city == null ? NotFound() : Ok(city);
         }
 
         [HttpPost]
         public async Task<ActionResult<CityDTO>> Create([FromBody] CityDTO dto)
         {
-            var created = await _service.CreateAsync(dto);
+            var created = await _service.CreateCity(dto);
             return CreatedAtAction(nameof(GetById), new { id = created.CityId }, created);
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] CityDTO dto)
         {
-            var updated = await _service.UpdateAsync(id, dto);
+            var updated = await _service.UpdateCity(id, dto);
             return updated ? NoContent() : NotFound();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var deleted = await _service.DeleteAsync(id);
+            var deleted = await _service.DeleteCity(id);
             return deleted ? NoContent() : NotFound();
         }
     }

@@ -14,7 +14,7 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<RoleDTO>> GetAllAsync()
+        public async Task<IEnumerable<RoleDTO>> GetAllRoles()
         {
             return await _context.Role
                 .Select(r => new RoleDTO
@@ -25,7 +25,7 @@ namespace VinylBack.Services
                 .ToListAsync();
         }
 
-        public async Task<RoleDTO?> GetByIdAsync(int id)
+        public async Task<RoleDTO?> GetRoleById(int id)
         {
             var r = await _context.Role.FindAsync(id);
             return r == null ? null : new RoleDTO
@@ -35,7 +35,7 @@ namespace VinylBack.Services
             };
         }
 
-        public async Task<RoleDTO> CreateAsync(RoleDTO dto)
+        public async Task<RoleDTO> CreateRole(RoleDTO dto)
         {
             var entity = new Role
             {
@@ -49,7 +49,7 @@ namespace VinylBack.Services
             return dto;
         }
 
-        public async Task<bool> UpdateAsync(int id, RoleDTO dto)
+        public async Task<bool> UpdateRole(int id, RoleDTO dto)
         {
             var entity = await _context.Role.FindAsync(id);
             if (entity == null) return false;
@@ -60,7 +60,7 @@ namespace VinylBack.Services
             return true;
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteRole(int id)
         {
             var entity = await _context.Role.FindAsync(id);
             if (entity == null) return false;

@@ -4,10 +4,10 @@ namespace VinylBack.Services
 {
     public interface ICityService
     {
-        Task<IEnumerable<CityDTO>> GetAllAsync();
-        Task<CityDTO?> GetByIdAsync(int id);
-        Task<CityDTO> CreateAsync(CityDTO dto);
-        Task<bool> UpdateAsync(int id, CityDTO dto);
-        Task<bool> DeleteAsync(int id);
+        Task<IEnumerable<CityDTO>> GetAllCities(int page, int limit);
+        Task<CityDTO?> GetCityById(int id);
+        Task<CityDTO> CreateCity(CityDTO dto);
+        Task<bool> UpdateCity(int id, CityDTO dto);
+        Task<bool> DeleteCity(int id);
     }
 }

@@ -13,9 +13,11 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<TrackDto>> GetAllTracksAsync()
+        public async Task<IEnumerable<TrackDto>> GetAllTracks(int page, int limit)
         {
             return await _context.Track
+                .Skip((page - 1) * limit)
+                .Take(limit)
                 .Select(t => new TrackDto
                 {
                     TrackId = t.TrackId,
@@ -27,7 +29,7 @@ namespace VinylBack.Services
                 }).ToListAsync();
         }
 
-        public async Task<TrackDto?> GetTrackByIdAsync(int id)
+        public async Task<TrackDto?> GetTrackById(int id)
         {
             var t = await _context.Track.FindAsync(id);
             return t == null ? null : new TrackDto
@@ -41,7 +43,7 @@ namespace VinylBack.Services
             };
         }
 
-        public async Task<TrackDto?> CreateTrackAsync(TrackDto track)
+        public async Task<TrackDto?> CreateTrack(TrackDto track)
         {
             var newTrack = new Track
             {
@@ -59,7 +61,7 @@ namespace VinylBack.Services
             return track;
         }
 
-        public async Task<bool> UpdateTrackAsync(int id, TrackDto track)
+        public async Task<bool> UpdateTrack(int id, TrackDto track)
         {
             var updatedTrack = await _context.Track.FindAsync(id);
             if (updatedTrack == null) return false;
@@ -74,7 +76,7 @@ namespace VinylBack.Services
             return true;
         }
 
-        public async Task<bool> DeleteTrackAsync(int id)
+        public async Task<bool> DeleteTrack(int id)
         {
             var track = await _context.Track.FindAsync(id);
             if (track == null) return false;

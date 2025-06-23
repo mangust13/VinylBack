@@ -14,7 +14,7 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<PurchaseStatusDTO>> GetAllAsync()
+        public async Task<IEnumerable<PurchaseStatusDTO>> GetPurchaseStatusServicesAll()
         {
             return await _context.PurchaseStatus
                 .Select(s => new PurchaseStatusDTO
@@ -25,7 +25,7 @@ namespace VinylBack.Services
                 .ToListAsync();
         }
 
-        public async Task<PurchaseStatusDTO?> GetByIdAsync(int id)
+        public async Task<PurchaseStatusDTO?> GetPurchaseStatusServiceById(int id)
         {
             var s = await _context.PurchaseStatus.FindAsync(id);
             return s == null ? null : new PurchaseStatusDTO
@@ -35,7 +35,7 @@ namespace VinylBack.Services
             };
         }
 
-        public async Task<PurchaseStatusDTO> CreateAsync(PurchaseStatusDTO dto)
+        public async Task<PurchaseStatusDTO> CreatePurchaseStatusService(PurchaseStatusDTO dto)
         {
             var entity = new PurchaseStatus
             {
@@ -49,7 +49,7 @@ namespace VinylBack.Services
             return dto;
         }
 
-        public async Task<bool> UpdateAsync(int id, PurchaseStatusDTO dto)
+        public async Task<bool> UpdatePurchaseStatusService(int id, PurchaseStatusDTO dto)
         {
             var entity = await _context.PurchaseStatus.FindAsync(id);
             if (entity == null) return false;
@@ -60,7 +60,7 @@ namespace VinylBack.Services
             return true;
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeletePurchaseStatusService(int id)
         {
             var entity = await _context.PurchaseStatus.FindAsync(id);
             if (entity == null) return false;

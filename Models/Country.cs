@@ -6,8 +6,10 @@ namespace VinylBack.Models
     {
         [Key]
         public int CountryId { get; set; }
-        public string CountryName { get; set; }
+        public string? CountryName { get; set; }
         public ICollection<City> Cities { get; set; }
+        public ICollection<Album> Albums { get; set; }
+
 
     }
 }

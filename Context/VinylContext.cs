@@ -11,6 +11,11 @@ namespace VinylBack.Context
         public DbSet<AppUser> AppUser { get; set; }
         public DbSet<Role> Role { get; set; }
         public DbSet<Singer> Singer { get; set; }
+        public DbSet<Style> Style { get; set; }
+        public DbSet<Genre> Genre { get; set; }
+        public DbSet<Lable> Lable { get; set; }
+
+
         public DbSet<Album> Album { get; set; }
         public DbSet<Track> Track { get; set; }
         public DbSet<PurchasedTrack> PurchasedTrack { get; set; }

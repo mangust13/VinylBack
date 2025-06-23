@@ -14,9 +14,11 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<CityDTO>> GetAllAsync()
+        public async Task<IEnumerable<CityDTO>> GetAllCities(int page, int limit)
         {
             return await _context.City
+                .Skip((page - 1) * limit)
+                .Take(limit)
                 .Select(c => new CityDTO
                 {
                     CityId = c.CityId,
@@ -26,7 +28,7 @@ namespace VinylBack.Services
                 .ToListAsync();
         }
 
-        public async Task<CityDTO?> GetByIdAsync(int id)
+        public async Task<CityDTO?> GetCityById(int id)
         {
             var c = await _context.City.FindAsync(id);
             return c == null ? null : new CityDTO
@@ -37,7 +39,7 @@ namespace VinylBack.Services
             };
         }
 
-        public async Task<CityDTO> CreateAsync(CityDTO dto)
+        public async Task<CityDTO> CreateCity(CityDTO dto)
         {
             var entity = new City
             {
@@ -52,7 +54,7 @@ namespace VinylBack.Services
             return dto;
         }
 
-        public async Task<bool> UpdateAsync(int id, CityDTO dto)
+        public async Task<bool> UpdateCity(int id, CityDTO dto)
         {
             var entity = await _context.City.FindAsync(id);
             if (entity == null) return false;
@@ -64,7 +66,7 @@ namespace VinylBack.Services
             return true;
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteCity(int id)
         {
             var entity = await _context.City.FindAsync(id);
             if (entity == null) return false;

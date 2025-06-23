@@ -4,10 +4,10 @@ namespace VinylBack.Services
 {
     public interface IPurchaseStatusService
     {
-        Task<IEnumerable<PurchaseStatusDTO>> GetAllAsync();
-        Task<PurchaseStatusDTO?> GetByIdAsync(int id);
-        Task<PurchaseStatusDTO> CreateAsync(PurchaseStatusDTO dto);
-        Task<bool> UpdateAsync(int id, PurchaseStatusDTO dto);
-        Task<bool> DeleteAsync(int id);
+        Task<IEnumerable<PurchaseStatusDTO>> GetPurchaseStatusServicesAll();
+        Task<PurchaseStatusDTO?> GetPurchaseStatusServiceById(int id);
+        Task<PurchaseStatusDTO> CreatePurchaseStatusService(PurchaseStatusDTO dto);
+        Task<bool> UpdatePurchaseStatusService(int id, PurchaseStatusDTO dto);
+        Task<bool> DeletePurchaseStatusService(int id);
     }
 }

@@ -14,7 +14,7 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<LocationDTO>> GetAllAsync()
+        public async Task<IEnumerable<LocationDTO>> GetAllLocations()
         {
             return await _context.Location
                 .Select(l => new LocationDTO
@@ -26,7 +26,7 @@ namespace VinylBack.Services
                 .ToListAsync();
         }
 
-        public async Task<LocationDTO?> GetByIdAsync(int id)
+        public async Task<LocationDTO?> GetLocationById(int id)
         {
             var l = await _context.Location.FindAsync(id);
             return l == null ? null : new LocationDTO
@@ -37,7 +37,7 @@ namespace VinylBack.Services
             };
         }
 
-        public async Task<LocationDTO> CreateAsync(LocationDTO dto)
+        public async Task<LocationDTO> CreateLocation(LocationDTO dto)
         {
             var entity = new Location
             {
@@ -52,7 +52,7 @@ namespace VinylBack.Services
             return dto;
         }
 
-        public async Task<bool> UpdateAsync(int id, LocationDTO dto)
+        public async Task<bool> UpdateLocation(int id, LocationDTO dto)
         {
             var entity = await _context.Location.FindAsync(id);
             if (entity == null) return false;
@@ -64,7 +64,7 @@ namespace VinylBack.Services
             return true;
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteLocation(int id)
         {
             var entity = await _context.Location.FindAsync(id);
             if (entity == null) return false;

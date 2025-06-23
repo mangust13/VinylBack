@@ -4,10 +4,10 @@ namespace VinylBack.Services
 {
     public interface ITrackService
     {
-        Task<IEnumerable<TrackDto>> GetAllTracksAsync();
-        Task<TrackDto?> GetTrackByIdAsync(int id);
-        Task<TrackDto?> CreateTrackAsync(TrackDto track);
-        Task<bool> UpdateTrackAsync(int id, TrackDto track);
-        Task<bool> DeleteTrackAsync(int id);
+        Task<IEnumerable<TrackDto>> GetAllTracks(int page, int limit);
+        Task<TrackDto?> GetTrackById(int id);
+        Task<TrackDto?> CreateTrack(TrackDto track);
+        Task<bool> UpdateTrack(int id, TrackDto track);
+        Task<bool> DeleteTrack(int id);
     }
 }

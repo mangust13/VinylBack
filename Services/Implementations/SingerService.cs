@@ -13,9 +13,11 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<SingerDto>> GetAllSingersAsync()
+        public async Task<IEnumerable<SingerDto>> GetAllSingers(int page, int limit)
         {
             return await _context.Singer
+                .Skip((page - 1) * limit)
+                .Take(limit)
                 .Select(s => new SingerDto
                 {
                     SingerId = s.SingerId,
@@ -25,7 +27,7 @@ namespace VinylBack.Services
                 .ToListAsync();
         }
 
-        public async Task<SingerDto?> GetSingerByIdAsync(int id)
+        public async Task<SingerDto?> GetSingerById(int id)
         {
             var s = await _context.Singer.FindAsync(id);
             return s == null ? null : new SingerDto
@@ -36,7 +38,7 @@ namespace VinylBack.Services
             };
         }
 
-        public async Task<SingerDto?> CreateSingerAsync(SingerDto singer)
+        public async Task<SingerDto?> CreateSinger(SingerDto singer)
         {
             var newSinger = new Singer
             {
@@ -52,7 +54,7 @@ namespace VinylBack.Services
         }
 
         
-        public async Task<bool> UpdateSingerAsync(int id, SingerDto singer)
+        public async Task<bool> UpdateSinger(int id, SingerDto singer)
         {
             var updatedSinger = await _context.Singer.FindAsync(id);
             if (updatedSinger == null)
@@ -65,7 +67,7 @@ namespace VinylBack.Services
             return true;
         }
 
-        public async Task<bool> DeleteSingerAsync(int id)
+        public async Task<bool> DeleteSinger(int id)
         {
             var singer = await _context.Singer.FindAsync(id);
             if (singer == null)

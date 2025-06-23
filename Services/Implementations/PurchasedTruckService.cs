@@ -14,9 +14,11 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<PurchasedTrackDTO>> GetAllAsync()
+        public async Task<IEnumerable<PurchasedTrackDTO>> GetAllPurchasedTracks(int page, int limit)
         {
             return await _context.PurchasedTrack
+                .Skip((page - 1) * limit)
+                .Take(limit)
                 .Select(p => new PurchasedTrackDTO
                 {
                     PurchasedTrackId = p.PurchasedTrackId,
@@ -26,7 +28,7 @@ namespace VinylBack.Services
                 .ToListAsync();
         }
 
-        public async Task<PurchasedTrackDTO?> GetByIdAsync(int id)
+        public async Task<PurchasedTrackDTO?> GetPurchasedTrackById(int id)
         {
             var p = await _context.PurchasedTrack.FindAsync(id);
             return p == null ? null : new PurchasedTrackDTO
@@ -37,7 +39,7 @@ namespace VinylBack.Services
             };
         }
 
-        public async Task<PurchasedTrackDTO> CreateAsync(PurchasedTrackDTO dto)
+        public async Task<PurchasedTrackDTO> CreatePurchasedTrack(PurchasedTrackDTO dto)
         {
             var entity = new PurchasedTrack
             {
@@ -52,7 +54,7 @@ namespace VinylBack.Services
             return dto;
         }
 
-        public async Task<bool> UpdateAsync(int id, PurchasedTrackDTO dto)
+        public async Task<bool> UpdatePurchasedTrack(int id, PurchasedTrackDTO dto)
         {
             var entity = await _context.PurchasedTrack.FindAsync(id);
             if (entity == null) return false;
@@ -64,7 +66,7 @@ namespace VinylBack.Services
             return true;
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeletePurchasedTrack(int id)
         {
             var entity = await _context.PurchasedTrack.FindAsync(id);
             if (entity == null) return false;

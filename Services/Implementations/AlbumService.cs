@@ -8,54 +8,65 @@ namespace VinylBack.Services
     public class AlbumService : IAlbumService
     {
         private readonly VinylContext _context;
+
         public AlbumService(VinylContext context)
         {
             _context = context;
         }
 
-        public async Task<IEnumerable<AlbumDto>> GetAllAlbumsAsync()
+        public async Task<IEnumerable<AlbumDto>> GetAllAlbums(int page, int limit)
         {
             return await _context.Album
+                .Include(a => a.Singer)
+                .Include(a => a.ReleaseCountry)
+                .Include(a => a.Lable)
+                .Include(a => a.Genre)
+                .Include(a => a.Style)
+                .Skip((page - 1) * limit)
+                .Take(limit)
                 .Select(a => new AlbumDto
                 {
                     AlbumId = a.AlbumId,
+                    AlbumName = a.AlbumName,
                     ReleaseYear = a.ReleaseYear,
-                    ReleaseCountry = a.ReleaseCountry,
-                    Lable = a.Lable,
-                    Genre = a.Genre,
-                    Style = a.Style,
                     SingerId = a.SingerId,
-                    AlbumURL = a.AlbumURL
+                    AlbumURL = a.AlbumURL,
+                    ReleaseCountryId = a.ReleaseCountryId,
+                    LableId = a.LableId,
+                    GenreId = a.GenreId,
+                    StyleId = a.StyleId
                 }).ToListAsync();
         }
-        public async Task<AlbumDto?> GetAlbumByIdAsync(int id)
-        {
-            var album = await _context.Album.FindAsync(id);
-            return album == null ? null : new AlbumDto
-            {
-                AlbumId = album.AlbumId,
-                ReleaseYear = album.ReleaseYear,
-                ReleaseCountry = album.ReleaseCountry,
-                Lable = album.Lable,
-                Genre = album.Genre,
-                Style = album.Style,
-                SingerId = album.SingerId,
-                AlbumURL = album.AlbumURL
-            };
 
+        public async Task<AlbumDto?> GetAlbumById(int id)
+        {
+            var a = await _context.Album.FindAsync(id);
+            return a == null ? null : new AlbumDto
+            {
+                AlbumId = a.AlbumId,
+                AlbumName = a.AlbumName,
+                ReleaseYear = a.ReleaseYear,
+                SingerId = a.SingerId,
+                AlbumURL = a.AlbumURL,
+                ReleaseCountryId = a.ReleaseCountryId,
+                LableId = a.LableId,
+                GenreId = a.GenreId,
+                StyleId = a.StyleId
+            };
         }
 
-        public async Task<AlbumDto> CreateAlbumAsync(AlbumDto album)
+        public async Task<AlbumDto> CreateAlbum(AlbumDto album)
         {
             var newAlbum = new Album
             {
+                AlbumName = album.AlbumName,
                 ReleaseYear = album.ReleaseYear,
-                ReleaseCountry = album.ReleaseCountry,
-                Lable = album.Lable,
-                Genre = album.Genre,
-                Style = album.Style,
                 SingerId = album.SingerId,
-                AlbumURL = album.AlbumURL
+                AlbumURL = album.AlbumURL,
+                ReleaseCountryId = album.ReleaseCountryId,
+                LableId = album.LableId,
+                GenreId = album.GenreId,
+                StyleId = album.StyleId
             };
 
             _context.Album.Add(newAlbum);
@@ -65,31 +76,30 @@ namespace VinylBack.Services
             return album;
         }
 
-        public async Task<bool> UpdateAlbumAsync(int id, AlbumDto album)
+        public async Task<bool> UpdateAlbum(int id, AlbumDto album)
         {
-            var updatedAlbum = await _context.Album.FindAsync(id);
-            if (updatedAlbum == null)
-                return false;
+            var a = await _context.Album.FindAsync(id);
+            if (a == null) return false;
 
-            updatedAlbum.ReleaseYear = album.ReleaseYear;
-            updatedAlbum.ReleaseCountry = album.ReleaseCountry;
-            updatedAlbum.Lable = album.Lable;
-            updatedAlbum.Genre = album.Genre;
-            updatedAlbum.Style = album.Style;
-            updatedAlbum.SingerId = album.SingerId;
-            updatedAlbum.AlbumURL = album.AlbumURL;
+            a.AlbumName = album.AlbumName;
+            a.ReleaseYear = album.ReleaseYear;
+            a.SingerId = album.SingerId;
+            a.AlbumURL = album.AlbumURL;
+            a.ReleaseCountryId = album.ReleaseCountryId;
+            a.LableId = album.LableId;
+            a.GenreId = album.GenreId;
+            a.StyleId = album.StyleId;
 
             await _context.SaveChangesAsync();
             return true;
         }
 
-        public async Task<bool> DeleteAlbumAsync(int id)
+        public async Task<bool> DeleteAlbum(int id)
         {
-            var album = await _context.Album.FindAsync(id);
-            if (album == null)
-                return false;
+            var a = await _context.Album.FindAsync(id);
+            if (a == null) return false;
 
-            _context.Album.Remove(album);
+            _context.Album.Remove(a);
             await _context.SaveChangesAsync();
             return true;
         }
