@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\controllers\\filteredcontentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:controllers\\filteredcontentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\controllers\\globalsearchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:controllers\\globalsearchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\services\\implementations\\singerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:services\\implementations\\singerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\models\\singer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:models\\singer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\controllers\\genrecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:controllers\\genrecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\services\\interfaces\\isingerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:services\\interfaces\\isingerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\services\\implementations\\trackservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:services\\implementations\\trackservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\services\\interfaces\\itrackservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:services\\interfaces\\itrackservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\models\\track.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:models\\track.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,72 +30,68 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FilteredContentController.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\FilteredContentController.cs",
-              "RelativeDocumentMoniker": "Controllers\\FilteredContentController.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\FilteredContentController.cs",
-              "RelativeToolTip": "Controllers\\FilteredContentController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwCMAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T15:22:11.993Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SingerService.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Implementations\\SingerService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\SingerService.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Implementations\\SingerService.cs",
-              "RelativeToolTip": "Services\\Implementations\\SingerService.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAwwFgAAAAAAAAAAAAAAA==",
+              "Title": "Singer.cs",
+              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Models\\Singer.cs",
+              "RelativeDocumentMoniker": "Models\\Singer.cs",
+              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Models\\Singer.cs",
+              "RelativeToolTip": "Models\\Singer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T15:17:46.509Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T17:28:28.588Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ISingerService.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Interfaces\\ISingerService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\ISingerService.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Interfaces\\ISingerService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\ISingerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABrAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "GlobalSearchController.cs",
+              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\GlobalSearchController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GlobalSearchController.cs",
+              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\GlobalSearchController.cs",
+              "RelativeToolTip": "Controllers\\GlobalSearchController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T15:17:16.328Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TrackService.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Implementations\\TrackService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\TrackService.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Implementations\\TrackService.cs",
-              "RelativeToolTip": "Services\\Implementations\\TrackService.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAwwGMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T15:15:51.938Z",
+              "WhenOpened": "2025-06-24T17:26:57.181Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ITrackService.cs",
-              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Interfaces\\ITrackService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\ITrackService.cs",
-              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Interfaces\\ITrackService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\ITrackService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA+AAAAAAAAAA==",
+              "Title": "Track.cs",
+              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Models\\Track.cs",
+              "RelativeDocumentMoniker": "Models\\Track.cs",
+              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Models\\Track.cs",
+              "RelativeToolTip": "Models\\Track.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T15:15:17.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T17:26:17.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ISingerService.cs",
+              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Interfaces\\ISingerService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ISingerService.cs",
+              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Services\\Interfaces\\ISingerService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ISingerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T11:51:33.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GenreController.cs",
+              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\GenreController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GenreController.cs",
+              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\GenreController.cs",
+              "RelativeToolTip": "Controllers\\GenreController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-24T11:51:11.182Z"
             }
           ]
         }

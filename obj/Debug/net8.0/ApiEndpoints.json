@@ -792,6 +792,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "VinylBack.Controllers.GlobalSearchController",
+    "Method": "Search",
+    "RelativePath": "api/GlobalSearch",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "VinylBack.Controllers.LableController",
     "Method": "GetAll",
     "RelativePath": "api/Lable",
