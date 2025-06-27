@@ -19,6 +19,7 @@ namespace VinylBack.Controllers
         public async Task<ActionResult<AlbumDto>> GetAll(
             [FromQuery] int page = 1, 
             [FromQuery] int limit = 10,
+            [FromQuery] List<int>? singerIds = null,
             [FromQuery] List<int>? genreIds = null,
             [FromQuery] List<int>? styleIds = null,
             [FromQuery] List<int>? lableIds = null,
@@ -28,7 +29,7 @@ namespace VinylBack.Controllers
             [FromQuery] string? sortByYear = null)
         {
             var albums = await _albumService.GetAllAlbums(
-                page, limit, genreIds, styleIds, lableIds, countryIds, minYear, maxYear, sortByYear);
+                page, limit, singerIds, genreIds, styleIds, lableIds, countryIds, minYear, maxYear, sortByYear);
             return Ok(albums);
         }
 

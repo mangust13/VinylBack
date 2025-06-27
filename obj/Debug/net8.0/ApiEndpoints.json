@@ -18,6 +18,11 @@
         "IsRequired": false
       },
       {
+        "Name": "singerIds",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
         "Name": "genreIds",
         "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
@@ -55,7 +60,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "VinylBack.DTOs.AlbumDto",
+        "Type": "AlbumDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -75,13 +80,13 @@
     "Parameters": [
       {
         "Name": "album",
-        "Type": "VinylBack.DTOs.AlbumDto",
+        "Type": "AlbumDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "VinylBack.DTOs.AlbumDto",
+        "Type": "AlbumDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -107,7 +112,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VinylBack.DTOs.AlbumDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AlbumDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -132,7 +137,7 @@
       },
       {
         "Name": "album",
-        "Type": "VinylBack.DTOs.AlbumDto",
+        "Type": "AlbumDto",
         "IsRequired": true
       }
     ],
@@ -567,7 +572,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VinylBack.DTOs.CountryDTO, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[VinylBack.DTOs.CountryDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -587,13 +592,13 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "VinylBack.DTOs.CountryDTO",
+        "Type": "VinylBack.DTOs.CountryDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "VinylBack.DTOs.CountryDTO",
+        "Type": "VinylBack.DTOs.CountryDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -619,7 +624,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "VinylBack.DTOs.CountryDTO",
+        "Type": "VinylBack.DTOs.CountryDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -644,7 +649,7 @@
       },
       {
         "Name": "dto",
-        "Type": "VinylBack.DTOs.CountryDTO",
+        "Type": "VinylBack.DTOs.CountryDto",
         "IsRequired": true
       }
     ],
@@ -1546,7 +1551,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VinylBack.DTOs.SingerDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SingerDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1566,13 +1571,13 @@
     "Parameters": [
       {
         "Name": "singer",
-        "Type": "VinylBack.DTOs.SingerDto",
+        "Type": "SingerDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "VinylBack.DTOs.SingerDto",
+        "Type": "SingerDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1598,7 +1603,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "VinylBack.DTOs.SingerDto",
+        "Type": "SingerDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1623,7 +1628,7 @@
       },
       {
         "Name": "singer",
-        "Type": "VinylBack.DTOs.SingerDto",
+        "Type": "SingerDto",
         "IsRequired": true
       }
     ],

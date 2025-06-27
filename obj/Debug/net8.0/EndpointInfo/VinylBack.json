@@ -30,6 +30,17 @@
             }
           },
           {
+            "name": "singerIds",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          },
+          {
             "name": "genreIds",
             "in": "query",
             "schema": {
@@ -987,7 +998,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/CountryDTO"
+                    "$ref": "#/components/schemas/CountryDto"
                   }
                 }
               },
@@ -995,7 +1006,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/CountryDTO"
+                    "$ref": "#/components/schemas/CountryDto"
                   }
                 }
               },
@@ -1003,7 +1014,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/CountryDTO"
+                    "$ref": "#/components/schemas/CountryDto"
                   }
                 }
               }
@@ -1019,17 +1030,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CountryDTO"
+                "$ref": "#/components/schemas/CountryDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CountryDTO"
+                "$ref": "#/components/schemas/CountryDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CountryDTO"
+                "$ref": "#/components/schemas/CountryDto"
               }
             }
           }
@@ -1040,17 +1051,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/CountryDTO"
+                  "$ref": "#/components/schemas/CountryDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CountryDTO"
+                  "$ref": "#/components/schemas/CountryDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CountryDTO"
+                  "$ref": "#/components/schemas/CountryDto"
                 }
               }
             }
@@ -1080,17 +1091,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/CountryDTO"
+                  "$ref": "#/components/schemas/CountryDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CountryDTO"
+                  "$ref": "#/components/schemas/CountryDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CountryDTO"
+                  "$ref": "#/components/schemas/CountryDto"
                 }
               }
             }
@@ -1116,17 +1127,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CountryDTO"
+                "$ref": "#/components/schemas/CountryDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CountryDTO"
+                "$ref": "#/components/schemas/CountryDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CountryDTO"
+                "$ref": "#/components/schemas/CountryDto"
               }
             }
           }
@@ -3488,29 +3499,26 @@
             "type": "string",
             "nullable": true
           },
-          "singerId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
+          "singer": {
+            "$ref": "#/components/schemas/SingerDto"
           },
-          "releaseCountryId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
+          "releaseCountry": {
+            "$ref": "#/components/schemas/CountryDto"
           },
-          "lableId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
+          "lable": {
+            "$ref": "#/components/schemas/LableDto"
           },
-          "genreId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
+          "genre": {
+            "$ref": "#/components/schemas/GenreDto"
           },
-          "styleId": {
-            "type": "integer",
-            "format": "int32",
+          "style": {
+            "$ref": "#/components/schemas/StyleDto"
+          },
+          "tracks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TrackDto"
+            },
             "nullable": true
           }
         },
@@ -3586,7 +3594,7 @@
         },
         "additionalProperties": false
       },
-      "CountryDTO": {
+      "CountryDto": {
         "type": "object",
         "properties": {
           "countryId": {
@@ -3768,6 +3776,13 @@
           "singerURL": {
             "type": "string",
             "nullable": true
+          },
+          "albums": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AlbumDto"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -3822,6 +3837,10 @@
         "type": "object",
         "properties": {
           "trackInBasketId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "trackCount": {
             "type": "integer",
             "format": "int32"
           },

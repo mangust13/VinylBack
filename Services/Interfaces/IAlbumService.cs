@@ -7,6 +7,7 @@ namespace VinylBack.Services
         Task<IEnumerable<AlbumDto>> GetAllAlbums(
             int page,
             int limit,
+            List<int>? singerIds = null,
             List<int>? genreIds = null,
             List<int>? styleIds = null,
             List<int>? lableIds = null,
