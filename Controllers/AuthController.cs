@@ -8,6 +8,7 @@ using System.Text;
 using VinylBack.Context;
 using VinylBack.DTOs;
 using VinylBack.Models;
+using VinylBack.Services.Implementations;
 
 
 namespace VinylBack.Controllers
@@ -25,65 +26,83 @@ namespace VinylBack.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register(RegisterDto dto)
+        public async Task<IActionResult> Register(RegisterDto dto, [FromServices] TokenService jwtService)
         {
+            if (await _context.AppUser.AnyAsync(u => u.Email == dto.Email))
+                return BadRequest("Користувач з таким email вже існує");
+
             using var hmac = new HMACSHA512();
             var hash = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(dto.Password)));
             var salt = Convert.ToBase64String(hmac.Key);
 
-            var connStr = _configuration.GetConnectionString("DefaultConnection");
-
-            await using var conn = new NpgsqlConnection(connStr);
-            await conn.OpenAsync();
-
-            var cmd = new NpgsqlCommand(@"
-                INSERT INTO ""AppUser"" (""Email"", ""PasswordHash"", ""PasswordSalt"", ""RoleId"", ""UserFullName"")
-                VALUES (@email, @hash, @salt, @roleId, @fullName);
-            ", conn);
-
-            cmd.Parameters.AddWithValue("email", dto.Email);
-            cmd.Parameters.AddWithValue("hash", hash);
-            cmd.Parameters.AddWithValue("salt", salt);
-            cmd.Parameters.AddWithValue("roleId", 1);
-            cmd.Parameters.AddWithValue("fullName", dto.UserFullName ?? "");
-
-            try
+            var user = new AppUser
             {
-                await cmd.ExecuteNonQueryAsync();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest("DB error: " + ex.Message);
-            }
+                Email = dto.Email,
+                PasswordHash = hash,
+                PasswordSalt = salt,
+                RoleId = 1,
+                UserFullName = dto.UserFullName ?? "",
+                PhoneNumber = null
+            };
 
-            return Ok("Успішно додано");
+            _context.AppUser.Add(user);
+            await _context.SaveChangesAsync();
+
+            await _context.Entry(user).Reference(u => u.Role).LoadAsync();
+
+            var token = jwtService.CreateToken(user);
+
+            var userDto = new AppUserDTO
+            {
+                UserId = user.UserId,
+                UserFullName = user.UserFullName,
+                PhoneNumber = user.PhoneNumber,
+                Email = user.Email,
+                PasswordHash = user.PasswordHash,
+                PasswordSalt = user.PasswordSalt,
+                RoleId = user.RoleId
+            };
+
+            return Ok(new { token, user = userDto });
         }
 
 
-        //[HttpPost("login")]
-        //public async Task<ActionResult<string>> Login(LoginDto dto)
-        //{
-        //    var user = await _context.AppUser
-        //        .Include(u => u.Role)
-        //        .SingleOrDefaultAsync(u => u.Email == dto.Email);
 
-        //    if (user == null)
-        //        return Unauthorized("Invalid username");
+        [HttpPost("login")]
+        public async Task<ActionResult<object>> Login(LoginDto dto, [FromServices] TokenService jwtService)
+        {
+            var user = await _context.AppUser
+                .Include(u => u.Role)
+                .FirstOrDefaultAsync(u => u.Email == dto.Email);
 
-        //    using var hmac = new HMACSHA512(user.PasswordSalt);
-        //    var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(dto.Password));
+            if (user == null)
+                return Unauthorized("Invalid email");
 
-        //    if (!computedHash.SequenceEqual(user.PasswordHash))
-        //        return Unauthorized("Invalid password");
+            using var hmac = new HMACSHA512(Convert.FromBase64String(user.PasswordSalt));
+            var computedHash = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(dto.Password)));
 
-        //    var createdUser = await _context.AppUser
-        //        .Include(u => u.Role)
-        //        .FirstAsync(u => u.UserId == user.UserId);
+            if (computedHash != user.PasswordHash)
+                return Unauthorized("Invalid password");
+
+            var token = jwtService.CreateToken(user);
+
+            return Ok(new
+            {
+                token,
+                user = new AppUserDTO
+                {
+                    UserId = user.UserId,
+                    UserFullName = user.UserFullName,
+                    PhoneNumber = user.PhoneNumber ?? "",
+                    Email = user.Email,
+                    PasswordHash = user.PasswordHash,
+                    PasswordSalt = user.PasswordSalt,
+                    RoleId = user.RoleId
+                }
+            });
+        }
 
 
-
-        //    return Ok();
-        //}
 
     }
 }

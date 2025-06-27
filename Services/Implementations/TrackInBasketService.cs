@@ -20,6 +20,7 @@ namespace VinylBack.Services
                 .Select(t => new TrackInBasketDTO
                 {
                     TrackInBasketId = t.TrackInBasketId,
+                    TrackCount = t.TrackCount,
                     BasketId = t.BasketId,
                     TrackId = t.TrackId
                 })
@@ -32,6 +33,7 @@ namespace VinylBack.Services
             return t == null ? null : new TrackInBasketDTO
             {
                 TrackInBasketId = t.TrackInBasketId,
+                TrackCount = t.TrackCount,
                 BasketId = t.BasketId,
                 TrackId = t.TrackId
             };
@@ -41,6 +43,7 @@ namespace VinylBack.Services
         {
             var entity = new TrackInBasket
             {
+                TrackCount = dto.TrackCount,
                 BasketId = dto.BasketId,
                 TrackId = dto.TrackId
             };
@@ -59,6 +62,7 @@ namespace VinylBack.Services
 
             entity.BasketId = dto.BasketId;
             entity.TrackId = dto.TrackId;
+            entity.TrackCount = dto.TrackCount;
 
             await _context.SaveChangesAsync();
             return true;

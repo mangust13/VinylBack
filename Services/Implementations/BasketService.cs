@@ -22,7 +22,7 @@ namespace VinylBack.Services
                 .Select(b => new BasketDTO
                 {
                     BasketId = b.BasketId,
-                    UserId = b.UserId,
+                    UserId = b.AppUserId,
                     TotalCost = b.TotalCost
                 })
                 .ToListAsync();
@@ -34,7 +34,7 @@ namespace VinylBack.Services
             return b == null ? null : new BasketDTO
             {
                 BasketId = b.BasketId,
-                UserId = b.UserId,
+                UserId = b.AppUserId,
                 TotalCost = b.TotalCost
             };
         }
@@ -43,7 +43,7 @@ namespace VinylBack.Services
         {
             var entity = new Basket
             {
-                UserId = dto.UserId,
+                AppUserId = dto.UserId,
                 TotalCost = dto.TotalCost
             };
 
@@ -59,7 +59,7 @@ namespace VinylBack.Services
             var entity = await _context.Basket.FindAsync(id);
             if (entity == null) return false;
 
-            entity.UserId = dto.UserId;
+            entity.AppUserId = dto.UserId;
             entity.TotalCost = dto.TotalCost;
 
             await _context.SaveChangesAsync();

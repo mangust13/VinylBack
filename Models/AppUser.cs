@@ -16,7 +16,7 @@ namespace VinylBack.Models
 
         public string PasswordSalt { get; set; }
 
-        public string PhoneNumber { get; set; }
+        public string? PhoneNumber { get; set; }
 
         [ForeignKey("RoleId")]
         public int RoleId { get; set; }

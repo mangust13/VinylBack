@@ -1,7 +1,11 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Text;
 using VinylBack.Context;
 using VinylBack.Services;
+using VinylBack.Services.Implementations;
 
 namespace VinylBack
 {
@@ -11,10 +15,8 @@ namespace VinylBack
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Controllers
             builder.Services.AddControllers();
 
-            // Supabase PostgreSQL DB
             builder.Services.AddDbContext<VinylContext>(options =>
             {
                 options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
@@ -22,12 +24,11 @@ namespace VinylBack
                 options.LogTo(Console.WriteLine);
             });
 
-            // Services
+            // Custom services
             builder.Services.AddScoped<ISingerService, SingerService>();
             builder.Services.AddScoped<IGenreService, GenreService>();
             builder.Services.AddScoped<ILableService, LableService>();
             builder.Services.AddScoped<IStyleService, StyleService>();
-
             builder.Services.AddScoped<IAlbumService, AlbumService>();
             builder.Services.AddScoped<ITrackService, TrackService>();
             builder.Services.AddScoped<IPurchasedTrackService, PurchasedTrackService>();
@@ -41,9 +42,21 @@ namespace VinylBack
             builder.Services.AddScoped<IPurchaseStatusService, PurchaseStatusService>();
             builder.Services.AddScoped<ILocationService, LocationService>();
 
-
-
-            builder.Services.AddSingleton<IConfiguration>(provider => builder.Configuration);
+            // JWT
+            builder.Services.AddScoped<TokenService>();
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(
+                            Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+                    };
+                });
 
             // Swagger
             builder.Services.AddSwaggerGen(c =>
@@ -60,7 +73,9 @@ namespace VinylBack
             }
 
             app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseAuthorization();
+
             app.MapControllers();
             app.Run();
         }

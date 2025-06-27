@@ -7,6 +7,7 @@ namespace VinylBack.Models
     {
         [Key]
         public int TrackInBasketId { get; set; }
+        public int TrackCount { get; set; }
 
         [ForeignKey("Basket")]
         public int BasketId { get; set; }
