@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\dtos\\pagedresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:dtos\\pagedresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\controllers\\albumcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:controllers\\albumcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\controllers\\appusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:controllers\\appusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|d:\\univer\\sem_06\\practice\\vinylback\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C535A1B-0915-4E3C-9594-3BDDD59152BA}|VinylBack.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,19 +26,59 @@
       "DocumentGroups": [
         {
           "DockedHeight": 80,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PagedResultDto.cs",
+              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\DTOs\\PagedResultDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\PagedResultDto.cs",
+              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\DTOs\\PagedResultDto.cs",
+              "RelativeToolTip": "DTOs\\PagedResultDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T11:01:42.914Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AlbumController.cs",
+              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\AlbumController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AlbumController.cs",
+              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\AlbumController.cs",
+              "RelativeToolTip": "Controllers\\AlbumController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T10:57:03.848Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppUserController.cs",
+              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\AppUserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AppUserController.cs",
+              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Controllers\\AppUserController.cs",
+              "RelativeToolTip": "Controllers\\AppUserController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T10:55:47.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Univer\\Sem_06\\Practice\\VinylBack\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAFgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T10:29:33.441Z",
+              "EditorCaption": ""
             }
           ]
         }

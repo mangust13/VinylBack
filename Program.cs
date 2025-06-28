@@ -17,12 +17,25 @@ namespace VinylBack
 
             builder.Services.AddControllers();
 
+            // --- CORS ---
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", policy =>
+                {
+                    policy.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader();
+                });
+            });
+
+            // --- DbContext ---
             builder.Services.AddDbContext<VinylContext>(options =>
             {
                 options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
                 options.EnableSensitiveDataLogging();
                 options.LogTo(Console.WriteLine);
             });
+
 
             // Custom services
             builder.Services.AddScoped<ISingerService, SingerService>();
@@ -73,6 +86,7 @@ namespace VinylBack
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("AllowAll");
             app.UseAuthentication();
             app.UseAuthorization();
 
