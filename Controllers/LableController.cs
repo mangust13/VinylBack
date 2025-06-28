@@ -16,10 +16,14 @@ namespace VinylBack.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<LableDto>>> GetAll([FromQuery] int page = 1, [FromQuery] int limit = 10)
+        public async Task<ActionResult<PagedResultDto<LableDto>>> GetAll(
+    [FromQuery] int page = 1,
+    [FromQuery] int limit = 10)
         {
-            return Ok(await _service.GetAllLables(page, limit));
+            var result = await _service.GetAllLables(page, limit);
+            return Ok(result);
         }
+
 
         [HttpGet("{id}")]
         public async Task<ActionResult<LableDto>> GetById(int id)

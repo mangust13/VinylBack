@@ -13,14 +13,14 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<TrackDto>> GetAllTracks(
-            int page, 
-            int limit,
-            List<int>? genreIds = null,
-            List<int>? styleIds = null,
-            double? minPrice = null,
-            double? maxPrice = null,
-            string? sortByDuration = null)
+        public async Task<PagedResultDto<TrackDto>> GetAllTracks(
+    int page,
+    int limit,
+    List<int>? genreIds = null,
+    List<int>? styleIds = null,
+    double? minPrice = null,
+    double? maxPrice = null,
+    string? sortByDuration = null)
         {
             var query = _context.Track
                 .Include(t => t.Album)
@@ -58,7 +58,9 @@ namespace VinylBack.Services
                 };
             }
 
-            var result = await query
+            var totalCount = await query.CountAsync();
+
+            var items = await query
                 .Skip((page - 1) * limit)
                 .Take(limit)
                 .Select(t => new TrackDto
@@ -72,8 +74,13 @@ namespace VinylBack.Services
                 })
                 .ToListAsync();
 
-            return result;
+            return new PagedResultDto<TrackDto>
+            {
+                TotalCount = totalCount,
+                Items = items
+            };
         }
+
 
         public async Task<IEnumerable<TrackDto>> GetTracksByGenresAndStyles(List<int>? genreIds, List<int>? styleIds)
         {

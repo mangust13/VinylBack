@@ -12,17 +12,17 @@ public class AlbumService : IAlbumService
         _context = context;
     }
 
-    public async Task<IEnumerable<AlbumDto>> GetAllAlbums(
-        int page,
-        int limit,
-        List<int>? singerIds = null,
-        List<int>? genreIds = null,
-        List<int>? styleIds = null,
-        List<int>? lableIds = null,
-        List<int>? countryIds = null,
-        int? minYear = null,
-        int? maxYear = null,
-        string? sortByYear = null)
+    public async Task<PagedResultDto<AlbumDto>> GetAllAlbums(
+    int page,
+    int limit,
+    List<int>? singerIds = null,
+    List<int>? genreIds = null,
+    List<int>? styleIds = null,
+    List<int>? lableIds = null,
+    List<int>? countryIds = null,
+    int? minYear = null,
+    int? maxYear = null,
+    string? sortByYear = null)
     {
         var query = _context.Album
             .Include(a => a.Singer)
@@ -35,24 +35,18 @@ public class AlbumService : IAlbumService
 
         if (genreIds != null && genreIds.Any())
             query = query.Where(a => a.GenreId.HasValue && genreIds.Contains(a.GenreId.Value));
-
         if (styleIds != null && styleIds.Any())
             query = query.Where(a => a.StyleId.HasValue && styleIds.Contains(a.StyleId.Value));
-
         if (lableIds != null && lableIds.Any())
             query = query.Where(a => a.LableId.HasValue && lableIds.Contains(a.LableId.Value));
-
         if (countryIds != null && countryIds.Any())
             query = query.Where(a => a.ReleaseCountryId.HasValue && countryIds.Contains(a.ReleaseCountryId.Value));
-
         if (singerIds != null && singerIds.Any())
             query = query.Where(a => a.SingerId.HasValue && singerIds.Contains(a.SingerId.Value));
-
         if (minYear.HasValue)
             query = query.Where(a => a.ReleaseYear >= minYear.Value);
         if (maxYear.HasValue)
             query = query.Where(a => a.ReleaseYear <= maxYear.Value);
-
         if (!string.IsNullOrEmpty(sortByYear))
             query = sortByYear.ToLower() switch
             {
@@ -61,12 +55,21 @@ public class AlbumService : IAlbumService
                 _ => query
             };
 
-        return await query
+        var totalCount = await query.CountAsync();
+
+        var items = await query
             .Skip((page - 1) * limit)
             .Take(limit)
             .Select(a => MapToDto(a))
             .ToListAsync();
+
+        return new PagedResultDto<AlbumDto>
+        {
+            TotalCount = totalCount,
+            Items = items
+        };
     }
+
 
     public async Task<IEnumerable<AlbumDto>> GetAlbumsByGenresAndStyles(List<int>? genreIds, List<int>? styleIds)
     {

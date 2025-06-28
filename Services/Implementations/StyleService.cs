@@ -14,9 +14,13 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<StyleDto>> GetAllStyles(int page, int limit)
+        public async Task<PagedResultDto<StyleDto>> GetAllStyles(int page, int limit)
         {
-            return await _context.Style
+            var query = _context.Style.AsQueryable();
+
+            var totalCount = await query.CountAsync();
+
+            var items = await query
                 .Skip((page - 1) * limit)
                 .Take(limit)
                 .Select(s => new StyleDto
@@ -25,7 +29,14 @@ namespace VinylBack.Services
                     StyleName = s.StyleName
                 })
                 .ToListAsync();
+
+            return new PagedResultDto<StyleDto>
+            {
+                TotalCount = totalCount,
+                Items = items
+            };
         }
+
 
         public async Task<StyleDto?> GetStyleById(int id)
         {

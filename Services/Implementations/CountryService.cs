@@ -14,9 +14,13 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<CountryDto>> GetAllCountries(int page, int limit)
+        public async Task<PagedResultDto<CountryDto>> GetAllCountries(int page, int limit)
         {
-            return await _context.Country
+            var query = _context.Country.AsQueryable();
+
+            var totalCount = await query.CountAsync();
+
+            var items = await query
                 .Skip((page - 1) * limit)
                 .Take(limit)
                 .Select(c => new CountryDto
@@ -25,7 +29,14 @@ namespace VinylBack.Services
                     CountryName = c.CountryName
                 })
                 .ToListAsync();
+
+            return new PagedResultDto<CountryDto>
+            {
+                TotalCount = totalCount,
+                Items = items
+            };
         }
+
 
         public async Task<CountryDto?> GetCountryById(int id)
         {

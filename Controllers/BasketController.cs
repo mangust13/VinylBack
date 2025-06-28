@@ -19,10 +19,14 @@ namespace VinylBack.Controllers
 
         [Authorize]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BasketDTO>>> GetAll([FromQuery] int page = 1, [FromQuery] int limit = 10)
+        public async Task<ActionResult<PagedResultDto<BasketDTO>>> GetAll(
+    [FromQuery] int page = 1,
+    [FromQuery] int limit = 10)
         {
-            return Ok(await _service.GetAllBaskets(page, limit));
+            var result = await _service.GetAllBaskets(page, limit);
+            return Ok(result);
         }
+
 
         [Authorize]
         [HttpGet("{id}")]

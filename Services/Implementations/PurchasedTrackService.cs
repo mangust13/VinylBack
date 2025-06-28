@@ -14,9 +14,13 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<PurchasedTrackDTO>> GetAllPurchasedTracks(int page, int limit)
+        public async Task<PagedResultDto<PurchasedTrackDTO>> GetAllPurchasedTracks(int page, int limit)
         {
-            return await _context.PurchasedTrack
+            var query = _context.PurchasedTrack.AsQueryable();
+
+            var totalCount = await query.CountAsync();
+
+            var items = await query
                 .Skip((page - 1) * limit)
                 .Take(limit)
                 .Select(p => new PurchasedTrackDTO
@@ -26,7 +30,14 @@ namespace VinylBack.Services
                     TrackId = p.TrackId
                 })
                 .ToListAsync();
+
+            return new PagedResultDto<PurchasedTrackDTO>
+            {
+                TotalCount = totalCount,
+                Items = items
+            };
         }
+
 
         public async Task<PurchasedTrackDTO?> GetPurchasedTrackById(int id)
         {

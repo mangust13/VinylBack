@@ -16,9 +16,13 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<GenreDto>> GetAllGenres(int page, int limit)
+        public async Task<PagedResultDto<GenreDto>> GetAllGenres(int page, int limit)
         {
-            return await _context.Genre
+            var query = _context.Genre.AsQueryable();
+
+            var totalCount = await query.CountAsync();
+
+            var items = await query
                 .Skip((page - 1) * limit)
                 .Take(limit)
                 .Select(g => new GenreDto
@@ -27,6 +31,12 @@ namespace VinylBack.Services
                     GenreName = g.GenreName
                 })
                 .ToListAsync();
+
+            return new PagedResultDto<GenreDto>
+            {
+                TotalCount = totalCount,
+                Items = items
+            };
         }
 
         public async Task<GenreDto?> GetGenreById(int id)

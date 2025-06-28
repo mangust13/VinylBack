@@ -13,12 +13,12 @@ public class SingerService : ISingerService
         _context = context;
     }
 
-    public async Task<IEnumerable<SingerDto>> GetAllSingers(
-        int page,
-        int limit,
-        List<int>? genreIds = null,
-        List<int>? styleIds = null,
-        string? sortByName = null)
+    public async Task<PagedResultDto<SingerDto>> GetAllSingers(
+    int page,
+    int limit,
+    List<int>? genreIds = null,
+    List<int>? styleIds = null,
+    string? sortByName = null)
     {
         var query = _context.Singer
             .Include(s => s.Albums)
@@ -55,12 +55,21 @@ public class SingerService : ISingerService
             };
         }
 
-        return await query
+        var totalCount = await query.CountAsync();
+
+        var items = await query
             .Skip((page - 1) * limit)
             .Take(limit)
             .Select(s => MapToDto(s))
             .ToListAsync();
+
+        return new PagedResultDto<SingerDto>
+        {
+            TotalCount = totalCount,
+            Items = items
+        };
     }
+
 
     public async Task<IEnumerable<SingerDto>> GetSingersByGenresAndStyles(List<int>? genreIds, List<int>? styleIds)
     {

@@ -114,17 +114,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AlbumDto"
+                  "$ref": "#/components/schemas/AlbumDtoPagedResultDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AlbumDto"
+                  "$ref": "#/components/schemas/AlbumDtoPagedResultDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AlbumDto"
+                  "$ref": "#/components/schemas/AlbumDtoPagedResultDto"
                 }
               }
             }
@@ -319,26 +319,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/AppUserDTO"
-                  }
+                  "$ref": "#/components/schemas/AppUserDTOPagedResultDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/AppUserDTO"
-                  }
+                  "$ref": "#/components/schemas/AppUserDTOPagedResultDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/AppUserDTO"
-                  }
+                  "$ref": "#/components/schemas/AppUserDTOPagedResultDto"
                 }
               }
             }
@@ -586,26 +577,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/BasketDTO"
-                  }
+                  "$ref": "#/components/schemas/BasketDTOPagedResultDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/BasketDTO"
-                  }
+                  "$ref": "#/components/schemas/BasketDTOPagedResultDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/BasketDTO"
-                  }
+                  "$ref": "#/components/schemas/BasketDTOPagedResultDto"
                 }
               }
             }
@@ -791,26 +773,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CityDTO"
-                  }
+                  "$ref": "#/components/schemas/CityDTOPagedResultDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CityDTO"
-                  }
+                  "$ref": "#/components/schemas/CityDTOPagedResultDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CityDTO"
-                  }
+                  "$ref": "#/components/schemas/CityDTOPagedResultDto"
                 }
               }
             }
@@ -996,26 +969,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CountryDto"
-                  }
+                  "$ref": "#/components/schemas/CountryDtoPagedResultDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CountryDto"
-                  }
+                  "$ref": "#/components/schemas/CountryDtoPagedResultDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CountryDto"
-                  }
+                  "$ref": "#/components/schemas/CountryDtoPagedResultDto"
                 }
               }
             }
@@ -1237,26 +1201,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/GenreDto"
-                  }
+                  "$ref": "#/components/schemas/GenreDtoPagedResultDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/GenreDto"
-                  }
+                  "$ref": "#/components/schemas/GenreDtoPagedResultDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/GenreDto"
-                  }
+                  "$ref": "#/components/schemas/GenreDtoPagedResultDto"
                 }
               }
             }
@@ -1463,26 +1418,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LableDto"
-                  }
+                  "$ref": "#/components/schemas/LableDtoPagedResultDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LableDto"
-                  }
+                  "$ref": "#/components/schemas/LableDtoPagedResultDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LableDto"
-                  }
+                  "$ref": "#/components/schemas/LableDtoPagedResultDto"
                 }
               }
             }
@@ -1853,26 +1799,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PurchaseDTO"
-                  }
+                  "$ref": "#/components/schemas/PurchaseDTOPagedResultDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PurchaseDTO"
-                  }
+                  "$ref": "#/components/schemas/PurchaseDTOPagedResultDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PurchaseDTO"
-                  }
+                  "$ref": "#/components/schemas/PurchaseDTOPagedResultDto"
                 }
               }
             }
@@ -2058,26 +1995,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PurchasedTrackDTO"
-                  }
+                  "$ref": "#/components/schemas/PurchasedTrackDTOPagedResultDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PurchasedTrackDTO"
-                  }
+                  "$ref": "#/components/schemas/PurchasedTrackDTOPagedResultDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PurchasedTrackDTO"
-                  }
+                  "$ref": "#/components/schemas/PurchasedTrackDTOPagedResultDto"
                 }
               }
             }
@@ -2662,26 +2590,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SingerDto"
-                  }
+                  "$ref": "#/components/schemas/SingerDtoPagedResultDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SingerDto"
-                  }
+                  "$ref": "#/components/schemas/SingerDtoPagedResultDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SingerDto"
-                  }
+                  "$ref": "#/components/schemas/SingerDtoPagedResultDto"
                 }
               }
             }
@@ -2867,26 +2786,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/StyleDto"
-                  }
+                  "$ref": "#/components/schemas/StyleDtoPagedResultDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/StyleDto"
-                  }
+                  "$ref": "#/components/schemas/StyleDtoPagedResultDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/StyleDto"
-                  }
+                  "$ref": "#/components/schemas/StyleDtoPagedResultDto"
                 }
               }
             }
@@ -3117,26 +3027,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TrackDto"
-                  }
+                  "$ref": "#/components/schemas/TrackDtoPagedResultDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TrackDto"
-                  }
+                  "$ref": "#/components/schemas/TrackDtoPagedResultDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TrackDto"
-                  }
+                  "$ref": "#/components/schemas/TrackDtoPagedResultDto"
                 }
               }
             }
@@ -3524,6 +3425,23 @@
         },
         "additionalProperties": false
       },
+      "AlbumDtoPagedResultDto": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AlbumDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "AppUserDTO": {
         "type": "object",
         "properties": {
@@ -3558,6 +3476,23 @@
         },
         "additionalProperties": false
       },
+      "AppUserDTOPagedResultDto": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AppUserDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "BasketDTO": {
         "type": "object",
         "properties": {
@@ -3572,6 +3507,23 @@
           "totalCost": {
             "type": "number",
             "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BasketDTOPagedResultDto": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BasketDTO"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -3594,6 +3546,23 @@
         },
         "additionalProperties": false
       },
+      "CityDTOPagedResultDto": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CityDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CountryDto": {
         "type": "object",
         "properties": {
@@ -3603,6 +3572,23 @@
           },
           "countryName": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CountryDtoPagedResultDto": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CountryDto"
+            },
             "nullable": true
           }
         },
@@ -3622,6 +3608,23 @@
         },
         "additionalProperties": false
       },
+      "GenreDtoPagedResultDto": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GenreDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "LableDto": {
         "type": "object",
         "properties": {
@@ -3631,6 +3634,23 @@
           },
           "lableName": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LableDtoPagedResultDto": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LableDto"
+            },
             "nullable": true
           }
         },
@@ -3698,6 +3718,23 @@
         },
         "additionalProperties": false
       },
+      "PurchaseDTOPagedResultDto": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PurchaseDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "PurchaseStatusDTO": {
         "type": "object",
         "properties": {
@@ -3726,6 +3763,23 @@
           "trackId": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PurchasedTrackDTOPagedResultDto": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PurchasedTrackDTO"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -3787,6 +3841,23 @@
         },
         "additionalProperties": false
       },
+      "SingerDtoPagedResultDto": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SingerDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "StyleDto": {
         "type": "object",
         "properties": {
@@ -3796,6 +3867,23 @@
           },
           "styleName": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StyleDtoPagedResultDto": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StyleDto"
+            },
             "nullable": true
           }
         },
@@ -3828,6 +3916,23 @@
           },
           "trackURL": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TrackDtoPagedResultDto": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TrackDto"
+            },
             "nullable": true
           }
         },

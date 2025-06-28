@@ -14,9 +14,13 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<BasketDTO>> GetAllBaskets(int page, int limit)
+        public async Task<PagedResultDto<BasketDTO>> GetAllBaskets(int page, int limit)
         {
-            return await _context.Basket
+            var query = _context.Basket.AsQueryable();
+
+            var totalCount = await query.CountAsync();
+
+            var items = await query
                 .Skip((page - 1) * limit)
                 .Take(limit)
                 .Select(b => new BasketDTO
@@ -26,7 +30,14 @@ namespace VinylBack.Services
                     TotalCost = b.TotalCost
                 })
                 .ToListAsync();
+
+            return new PagedResultDto<BasketDTO>
+            {
+                TotalCount = totalCount,
+                Items = items
+            };
         }
+
 
         public async Task<BasketDTO?> GetBasketById(int id)
         {

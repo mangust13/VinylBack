@@ -60,7 +60,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "AlbumDto",
+        "Type": "VinylBack.DTOs.PagedResultDto\u00601[[AlbumDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -180,7 +180,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VinylBack.DTOs.AppUserDTO, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "VinylBack.DTOs.PagedResultDto\u00601[[VinylBack.DTOs.AppUserDTO, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -332,7 +332,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VinylBack.DTOs.BasketDTO, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "VinylBack.DTOs.PagedResultDto\u00601[[VinylBack.DTOs.BasketDTO, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -452,7 +452,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VinylBack.DTOs.CityDTO, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "VinylBack.DTOs.PagedResultDto\u00601[[VinylBack.DTOs.CityDTO, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -572,7 +572,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VinylBack.DTOs.CountryDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "VinylBack.DTOs.PagedResultDto\u00601[[VinylBack.DTOs.CountryDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -713,7 +713,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VinylBack.DTOs.GenreDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "VinylBack.DTOs.PagedResultDto\u00601[[VinylBack.DTOs.GenreDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -849,7 +849,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VinylBack.DTOs.LableDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "VinylBack.DTOs.PagedResultDto\u00601[[VinylBack.DTOs.LableDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1078,7 +1078,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VinylBack.DTOs.PurchaseDTO, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "VinylBack.DTOs.PagedResultDto\u00601[[VinylBack.DTOs.PurchaseDTO, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1198,7 +1198,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VinylBack.DTOs.PurchasedTrackDTO, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "VinylBack.DTOs.PagedResultDto\u00601[[VinylBack.DTOs.PurchasedTrackDTO, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1551,7 +1551,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[SingerDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "VinylBack.DTOs.PagedResultDto\u00601[[SingerDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1671,7 +1671,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VinylBack.DTOs.StyleDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "VinylBack.DTOs.PagedResultDto\u00601[[VinylBack.DTOs.StyleDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1816,7 +1816,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[VinylBack.DTOs.TrackDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "VinylBack.DTOs.PagedResultDto\u00601[[VinylBack.DTOs.TrackDto, VinylBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

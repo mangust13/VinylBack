@@ -16,22 +16,23 @@ namespace VinylBack.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<AlbumDto>> GetAll(
-            [FromQuery] int page = 1, 
-            [FromQuery] int limit = 10,
-            [FromQuery] List<int>? singerIds = null,
-            [FromQuery] List<int>? genreIds = null,
-            [FromQuery] List<int>? styleIds = null,
-            [FromQuery] List<int>? lableIds = null,
-            [FromQuery] List<int>? countryIds = null,
-            [FromQuery] int? minYear = null,
-            [FromQuery] int? maxYear = null,
-            [FromQuery] string? sortByYear = null)
+        public async Task<ActionResult<PagedResultDto<AlbumDto>>> GetAll(
+    [FromQuery] int page = 1,
+    [FromQuery] int limit = 10,
+    [FromQuery] List<int>? singerIds = null,
+    [FromQuery] List<int>? genreIds = null,
+    [FromQuery] List<int>? styleIds = null,
+    [FromQuery] List<int>? lableIds = null,
+    [FromQuery] List<int>? countryIds = null,
+    [FromQuery] int? minYear = null,
+    [FromQuery] int? maxYear = null,
+    [FromQuery] string? sortByYear = null)
         {
             var albums = await _albumService.GetAllAlbums(
                 page, limit, singerIds, genreIds, styleIds, lableIds, countryIds, minYear, maxYear, sortByYear);
             return Ok(albums);
         }
+
 
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<AlbumDto>>> GetById(int id)

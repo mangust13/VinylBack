@@ -18,10 +18,14 @@ namespace VinylBack.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<ActionResult<IEnumerable<CountryDto>>> GetAll([FromQuery] int page = 1, [FromQuery] int limit = 10)
+        public async Task<ActionResult<PagedResultDto<CountryDto>>> GetAll(
+      [FromQuery] int page = 1,
+      [FromQuery] int limit = 10)
         {
-            return Ok(await _service.GetAllCountries(page, limit));
+            var result = await _service.GetAllCountries(page, limit);
+            return Ok(result);
         }
+
 
         [HttpGet("{id}")]
         [AllowAnonymous]

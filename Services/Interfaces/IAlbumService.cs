@@ -4,17 +4,18 @@ namespace VinylBack.Services
 {
     public interface IAlbumService
     {
-        Task<IEnumerable<AlbumDto>> GetAllAlbums(
-            int page,
-            int limit,
-            List<int>? singerIds = null,
-            List<int>? genreIds = null,
-            List<int>? styleIds = null,
-            List<int>? lableIds = null,
-            List<int>? countryIds = null,
-            int? minYear = null,
-            int? maxYear = null,
-            string? sortByYear = null);
+        Task<PagedResultDto<AlbumDto>> GetAllAlbums(
+    int page,
+    int limit,
+    List<int>? singerIds = null,
+    List<int>? genreIds = null,
+    List<int>? styleIds = null,
+    List<int>? lableIds = null,
+    List<int>? countryIds = null,
+    int? minYear = null,
+    int? maxYear = null,
+    string? sortByYear = null);
+
         Task<AlbumDto?> GetAlbumById(int id);
         Task<IEnumerable<AlbumDto>> GetAlbumsByGenresAndStyles(List<int>? genreIds, List<int>? styleIds);
         Task<AlbumDto> CreateAlbum(AlbumDto album);

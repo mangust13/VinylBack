@@ -4,7 +4,8 @@ namespace VinylBack.Services
 {
     public interface IPurchasedTrackService
     {
-        Task<IEnumerable<PurchasedTrackDTO>> GetAllPurchasedTracks(int page, int limit);
+        Task<PagedResultDto<PurchasedTrackDTO>> GetAllPurchasedTracks(int page, int limit);
+
         Task<PurchasedTrackDTO?> GetPurchasedTrackById(int id);
         Task<PurchasedTrackDTO> CreatePurchasedTrack(PurchasedTrackDTO dto);
         Task<bool> UpdatePurchasedTrack(int id, PurchasedTrackDTO dto);

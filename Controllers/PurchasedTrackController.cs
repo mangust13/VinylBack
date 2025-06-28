@@ -18,10 +18,14 @@ namespace VinylBack.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<ActionResult<IEnumerable<PurchasedTrackDTO>>> GetAll([FromQuery] int page = 1, [FromQuery] int limit = 10)
+        public async Task<ActionResult<PagedResultDto<PurchasedTrackDTO>>> GetAll(
+     [FromQuery] int page = 1,
+     [FromQuery] int limit = 10)
         {
-            return Ok(await _service.GetAllPurchasedTracks(page, limit));
+            var result = await _service.GetAllPurchasedTracks(page, limit);
+            return Ok(result);
         }
+
 
         [HttpGet("{id}")]
         [AllowAnonymous]

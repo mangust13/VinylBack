@@ -14,9 +14,13 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<CityDTO>> GetAllCities(int page, int limit)
+        public async Task<PagedResultDto<CityDTO>> GetAllCities(int page, int limit)
         {
-            return await _context.City
+            var query = _context.City.AsQueryable();
+
+            var totalCount = await query.CountAsync();
+
+            var items = await query
                 .Skip((page - 1) * limit)
                 .Take(limit)
                 .Select(c => new CityDTO
@@ -26,6 +30,12 @@ namespace VinylBack.Services
                     CountryId = c.CountryId
                 })
                 .ToListAsync();
+
+            return new PagedResultDto<CityDTO>
+            {
+                TotalCount = totalCount,
+                Items = items
+            };
         }
 
         public async Task<CityDTO?> GetCityById(int id)

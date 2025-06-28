@@ -16,9 +16,12 @@ namespace VinylBack.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<StyleDto>>> GetAll([FromQuery] int page = 1, [FromQuery] int limit = 10)
+        public async Task<ActionResult<PagedResultDto<StyleDto>>> GetAll(
+    [FromQuery] int page = 1,
+    [FromQuery] int limit = 10)
         {
-            return Ok(await _service.GetAllStyles(page, limit));
+            var result = await _service.GetAllStyles(page, limit);
+            return Ok(result);
         }
 
         [HttpGet("{id}")]

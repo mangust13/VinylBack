@@ -4,7 +4,7 @@ namespace VinylBack.Services
 {
     public interface IAppUserService
     {
-        Task<IEnumerable<AppUserDTO>> GetAllUsers(int page, int limit);
+        Task<PagedResultDto<AppUserDTO>> GetAllUsers(int page, int limit);
         Task<AppUserDTO?> GetUserById(int id);
         Task<AppUserDTO> CreateUser(AppUserDTO dto);
         Task<bool> UpdateUser(int id, AppUserDTO dto);

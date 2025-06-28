@@ -16,9 +16,13 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<LableDto>> GetAllLables(int page, int limit)
+        public async Task<PagedResultDto<LableDto>> GetAllLables(int page, int limit)
         {
-            return await _context.Lable
+            var query = _context.Lable.AsQueryable();
+
+            var totalCount = await query.CountAsync();
+
+            var items = await query
                 .Skip((page - 1) * limit)
                 .Take(limit)
                 .Select(l => new LableDto
@@ -27,7 +31,14 @@ namespace VinylBack.Services
                     LableName = l.LableName
                 })
                 .ToListAsync();
+
+            return new PagedResultDto<LableDto>
+            {
+                TotalCount = totalCount,
+                Items = items
+            };
         }
+
 
         public async Task<LableDto?> GetByIdLable(int id)
         {

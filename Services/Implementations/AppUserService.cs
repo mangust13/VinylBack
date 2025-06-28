@@ -14,9 +14,13 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<AppUserDTO>> GetAllUsers(int page, int limit)
+        public async Task<PagedResultDto<AppUserDTO>> GetAllUsers(int page, int limit)
         {
-            return await _context.AppUser
+            var query = _context.AppUser.AsQueryable();
+
+            var totalCount = await query.CountAsync();
+
+            var items = await query
                 .Skip((page - 1) * limit)
                 .Take(limit)
                 .Select(u => new AppUserDTO
@@ -30,7 +34,14 @@ namespace VinylBack.Services
                     RoleId = u.RoleId
                 })
                 .ToListAsync();
+
+            return new PagedResultDto<AppUserDTO>
+            {
+                TotalCount = totalCount,
+                Items = items
+            };
         }
+
 
         public async Task<AppUserDTO?> GetUserById(int id)
         {

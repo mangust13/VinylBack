@@ -14,9 +14,13 @@ namespace VinylBack.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<PurchaseDTO>> GetAllPurchaseServices(int page, int limit)
+        public async Task<PagedResultDto<PurchaseDTO>> GetAllPurchaseServices(int page, int limit)
         {
-            return await _context.Purchase
+            var query = _context.Purchase.AsQueryable();
+
+            var totalCount = await query.CountAsync();
+
+            var items = await query
                 .Skip((page - 1) * limit)
                 .Take(limit)
                 .Select(p => new PurchaseDTO
@@ -29,7 +33,14 @@ namespace VinylBack.Services
                     LocationId = p.LocationId
                 })
                 .ToListAsync();
+
+            return new PagedResultDto<PurchaseDTO>
+            {
+                TotalCount = totalCount,
+                Items = items
+            };
         }
+
 
         public async Task<PurchaseDTO?> GetPurchaseServiceById(int id)
         {
