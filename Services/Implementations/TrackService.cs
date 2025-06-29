@@ -14,13 +14,13 @@ namespace VinylBack.Services
         }
 
         public async Task<PagedResultDto<TrackDto>> GetAllTracks(
-    int page,
-    int limit,
-    List<int>? genreIds = null,
-    List<int>? styleIds = null,
-    double? minPrice = null,
-    double? maxPrice = null,
-    string? sortByDuration = null)
+            int page,
+            int limit,
+            List<int>? genreIds = null,
+            List<int>? styleIds = null,
+            double? minPrice = null,
+            double? maxPrice = null,
+            string? sortByDuration = null)
         {
             var query = _context.Track
                 .Include(t => t.Album)

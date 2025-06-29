@@ -22,63 +22,40 @@ namespace VinylBack.Controllers
                 return BadRequest("Query cannot be empty.");
 
             query = query.Trim().ToLower();
-            bool exactMatch = query.Length < 4;
 
             var tracks = await _context.Track
-                .Where(t => exactMatch
-                    ? t.TrackName.ToLower() == query
-                    : t.TrackName.ToLower().Contains(query))
+                .Where(t => t.TrackName.ToLower().Contains(query))
                 .Select(t => new
                 {
                     Id = t.TrackId,
-                    Name = t.TrackName,
-                    Type = "Track"
+                    Name = t.TrackName
                 })
                 .ToListAsync();
 
             var singers = await _context.Singer
-                .Where(s => exactMatch
-                    ? s.SingerFullName.ToLower() == query
-                    : s.SingerFullName.ToLower().Contains(query))
+                .Where(s => s.SingerFullName.ToLower().Contains(query))
                 .Select(s => new
                 {
                     Id = s.SingerId,
-                    Name = s.SingerFullName,
-                    Type = "Singer"
-                })
-                .ToListAsync();
-
-            var labels = await _context.Lable
-                .Where(l => exactMatch
-                    ? l.LableName.ToLower() == query
-                    : l.LableName.ToLower().Contains(query))
-                .Select(l => new
-                {
-                    Id = l.LableId,
-                    Name = l.LableName,
-                    Type = "Label"
+                    Name = s.SingerFullName
                 })
                 .ToListAsync();
 
             var albums = await _context.Album
-                .Where(a => exactMatch
-                    ? a.AlbumName.ToLower() == query
-                    : a.AlbumName.ToLower().Contains(query))
+                .Where(a => a.AlbumName.ToLower().Contains(query))
                 .Select(a => new
                 {
                     Id = a.AlbumId,
-                    Name = a.AlbumName,
-                    Type = "Album"
+                    Name = a.AlbumName
                 })
                 .ToListAsync();
 
-            var result = tracks
-                .Concat(singers)
-                .Concat(labels)
-                .Concat(albums);
-
-            return Ok(result);
+            return Ok(new
+            {
+                albums,
+                singers,
+                tracks
+            });
         }
-
     }
 }
